@@ -132,7 +132,7 @@ def fetch_deps(package_name):
 
     return all_req
 
-# package_name = 'urllib3'
+# package_name = 'python-dateutil'
 # deps = fetch_deps(package_name)
 
 # with open(f'tests/results/{package_name}.json', 'w') as outfile:

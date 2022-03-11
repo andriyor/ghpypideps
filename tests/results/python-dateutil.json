@@ -1,0 +1,13 @@
+[
+    "Sphinx>=1.7.3,!=1.8.0",
+    "attrs!=21.1.0",
+    "build >= 0.3.0 ; python_version >= '3.6'",
+    "coverage",
+    "freezegun ; python_version != '3.3'",
+    "hypothesis >= 3.30",
+    "mock ; python_version < '3.0'",
+    "pytest >= 3.0; python_version != '3.3'",
+    "pytest-cov >= 2.0.0",
+    "six",
+    "sphinx_rtd_theme>=0.3.0"
+]
