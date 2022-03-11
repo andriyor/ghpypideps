@@ -8,7 +8,15 @@ def read(package_name):
         return json.load(json_file)
 
 
-def test_answer():
+# TODO: parametrize tests
+
+def test_click():
     package_name = 'click'
+    expected = read(package_name)
+    assert fetch_deps(package_name) == expected
+
+
+def test_botocore():
+    package_name = 'botocore'
     expected = read(package_name)
     assert fetch_deps(package_name) == expected

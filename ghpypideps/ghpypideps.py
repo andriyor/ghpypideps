@@ -49,9 +49,12 @@ def search_requirements(uritemplate, owner, repository):
 
     searched_req = []
     for item in r.json()['items']:
-        if item['name'] not in req_files:
+        if item['name'] not in req_files and 'lock' not in item['name']:
+            print(item['path'])
             req = handle_requirements(uritemplate, item['path'])
             searched_req.extend(req)
+            print(req)
+            print()
     return searched_req
     
 
@@ -108,9 +111,11 @@ def fetch_deps(package_name):
 
         if content_obj.type == 'file':
             if 'requirements' in content_obj.name and '.txt' in content_obj.name and 'lock' not in content_obj.name:
+                print(content_obj.name)
                 req_files.append(content_obj.name)
                 req = handle_requirements(uritemplate, content_obj.name)
                 all_req.extend(req)
+                print(req)
                 print()
 
             # propper handling
@@ -123,13 +128,14 @@ def fetch_deps(package_name):
     req = search_requirements(uritemplate, owner, repository)
     all_req.extend(req)
     all_req.sort()
+    print()
     print(all_req)
 
     return all_req
 
-# package_name = 'click'
+# package_name = 'botocore'
 # deps = fetch_deps(package_name)
-
+#
 # with open(f'tests/results/{package_name}.json', 'w') as outfile:
 #     json.dump(deps, outfile, indent=4)
 
