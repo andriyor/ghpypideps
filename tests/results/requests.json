@@ -1,0 +1,13 @@
+[
+    ".[socks]",
+    "Flask>1.0,<2.0",
+    "Sphinx==4.2.0",
+    "httpbin==0.7.0",
+    "markupsafe<2.1",
+    "pytest-cov",
+    "pytest-httpbin==1.0.0",
+    "pytest-mock==2.0.0",
+    "pytest>=2.8.0,<=6.2.5",
+    "trustme",
+    "wheel"
+]

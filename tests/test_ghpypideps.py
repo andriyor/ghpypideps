@@ -32,3 +32,9 @@ def test_python_dateutil():
     package_name = 'python-dateutil'
     expected = read(package_name)
     assert fetch_deps(package_name) == expected
+
+def test_python_requests():
+    package_name = 'requests'
+    expected = read(package_name)
+    assert fetch_deps(package_name) == expected
+

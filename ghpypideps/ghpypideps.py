@@ -132,9 +132,11 @@ def fetch_deps(package_name):
 
     return all_req
 
-# package_name = 'python-dateutil'
-# deps = fetch_deps(package_name)
 
-# with open(f'tests/results/{package_name}.json', 'w') as outfile:
-#     json.dump(deps, outfile, indent=4)
+if __name__ == "__main__":
+    package_name = 'requests'
+    deps = fetch_deps(package_name)
+
+    with open(f'tests/results/{package_name}.json', 'w') as outfile:
+        json.dump(deps, outfile, indent=4)
 
