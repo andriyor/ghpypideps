@@ -134,7 +134,7 @@ def fetch_deps(package_name):
 
 
 if __name__ == "__main__":
-    package_name = 'requests'
+    package_name = 'matplotlib'
     deps = fetch_deps(package_name)
 
     with open(f'tests/results/{package_name}.json', 'w') as outfile:

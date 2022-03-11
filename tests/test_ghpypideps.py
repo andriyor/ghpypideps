@@ -1,40 +1,35 @@
 import json
+import glob
+
+import pytest
 
 from ghpypideps import fetch_deps
 
+root_path = 'tests/results/'
+
 
 def read(package_name):
-    with open(f'tests/results/{package_name}.json') as json_file:
+    with open(f'{root_path}{package_name}.json') as json_file:
         return json.load(json_file)
 
 
-# TODO: parametrize tests
+def get_packages():
+    packages = []
+    for path in glob.glob(f'{root_path}*.json'):
+        file_name = path.replace(root_path, '').replace('.json', '')
+        packages.append(file_name)
+    return packages
 
-def test_click():
-    package_name = 'click'
-    expected = read(package_name)
+# for all dumped
+# packages = get_packages()
+
+packages = [
+    'matplotlib',
+    'six',
+    'urllib3'
+]
+
+
+@pytest.mark.parametrize("package_name,expected", [(package, read(package)) for package in packages])
+def test_fetch_deps(package_name, expected):
     assert fetch_deps(package_name) == expected
-
-
-def test_botocore():
-    package_name = 'botocore'
-    expected = read(package_name)
-    assert fetch_deps(package_name) == expected
-
-
-def test_urllib3():
-    package_name = 'urllib3'
-    expected = read(package_name)
-    assert fetch_deps(package_name) == expected
-
-
-def test_python_dateutil():
-    package_name = 'python-dateutil'
-    expected = read(package_name)
-    assert fetch_deps(package_name) == expected
-
-def test_python_requests():
-    package_name = 'requests'
-    expected = read(package_name)
-    assert fetch_deps(package_name) == expected
-
