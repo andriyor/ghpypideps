@@ -1,16 +1,27 @@
-[
-    "Sphinx>=1.1.3,<1.3",
-    "atomicwrites>=1.0",
-    "behave==1.2.5",
-    "colorama>0.3.0",
-    "coverage==5.5",
-    "docutils>=0.10,<0.16",
-    "guzzle_sphinx_theme>=0.7.10,<0.8",
-    "jinja2>=2.3,<3.0",
-    "jsonschema==2.5.1",
-    "markupsafe>=1.1,<2.0",
-    "pytest-cov==2.12.1",
-    "pytest-xdist==2.4.0",
-    "pytest==6.2.5",
-    "wheel==0.37.0"
-]
+{
+    "requirements-dev.txt": [
+        "wheel==0.37.0",
+        "behave==1.2.5",
+        "jsonschema==2.5.1",
+        "coverage==5.5",
+        "pytest==6.2.5",
+        "pytest-cov==2.12.1",
+        "pytest-xdist==2.4.0",
+        "atomicwrites>=1.0",
+        "colorama>0.3.0"
+    ],
+    "requirements-docs.txt": [
+        "markupsafe>=1.1,<2.0",
+        "jinja2>=2.3,<3.0",
+        "docutils>=0.10,<0.16",
+        "Sphinx>=1.1.3,<1.3",
+        "guzzle_sphinx_theme>=0.7.10,<0.8"
+    ],
+    "requirements.txt": [],
+    "pypi": [
+        "jmespath (<1.0.0,>=0.7.1)",
+        "python-dateutil (<3.0.0,>=2.1)",
+        "urllib3 (<1.27,>=1.25.4)",
+        "awscrt (==0.12.5) ; extra == 'crt'"
+    ]
+}

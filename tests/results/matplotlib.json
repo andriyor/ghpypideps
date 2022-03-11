@@ -1,14 +1,18 @@
-[
-    "colorspacious",
-    "ipython",
-    "ipywidgets",
-    "mpl-sphinx-theme",
-    "numpydoc>=1.0",
-    "packaging>=20",
-    "pydata-sphinx-theme>=0.8.0",
-    "sphinx-copybutton",
-    "sphinx-gallery>=0.10",
-    "sphinx-panels",
-    "sphinx>=3.0.0",
-    "sphinxcontrib-svg2pdfconverter>=1.1.0"
-]
+{
+    "pypi": [],
+    "requirements/doc/doc-requirements.txt": [
+        "sphinx>=3.0.0",
+        "colorspacious",
+        "ipython",
+        "ipywidgets",
+        "numpydoc>=1.0",
+        "packaging>=20",
+        "pydata-sphinx-theme>=0.8.0",
+        "mpl-sphinx-theme",
+        "sphinxcontrib-svg2pdfconverter>=1.1.0",
+        "sphinx-gallery>=0.10",
+        "sphinx-copybutton",
+        "sphinx-panels"
+    ],
+    "requirements/dev/dev-requirements.txt": []
+}
