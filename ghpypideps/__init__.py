@@ -1,0 +1,1 @@
+from .ghpypideps import fetch_deps

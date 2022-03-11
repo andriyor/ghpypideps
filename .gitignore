@@ -1,0 +1,8 @@
+.idea
+.pytest_cache
+__pypackages__
+__pycache__
+setup
+examples
+cached
+.env
