@@ -20,3 +20,9 @@ def test_botocore():
     package_name = 'botocore'
     expected = read(package_name)
     assert fetch_deps(package_name) == expected
+
+
+def test_urllib3():
+    package_name = 'urllib3'
+    expected = read(package_name)
+    assert fetch_deps(package_name) == expected

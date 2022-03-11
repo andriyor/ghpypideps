@@ -41,9 +41,7 @@ def handle_requirements(uritemplate, path):
     return req
 
 
-req_files = []
-
-def search_requirements(uritemplate, owner, repository):
+def search_requirements(uritemplate, owner, repository, req_files):
     url = f'https://api.github.com/search/code?q=repo:{owner}/{repository}+filename:requirements.txt'
     r = httpx.get(url)
 
@@ -87,6 +85,7 @@ def handle_setup(uritemplate, path, package_name):
 
 
 def fetch_deps(package_name):
+    req_files = []
     all_req = []
 
     url = find_source_repo(package_name)
@@ -125,7 +124,7 @@ def fetch_deps(package_name):
             #     all_req.extend(req)
             #     print()
 
-    req = search_requirements(uritemplate, owner, repository)
+    req = search_requirements(uritemplate, owner, repository, req_files)
     all_req.extend(req)
     all_req.sort()
     print()
@@ -133,9 +132,9 @@ def fetch_deps(package_name):
 
     return all_req
 
-# package_name = 'botocore'
+# package_name = 'urllib3'
 # deps = fetch_deps(package_name)
-#
+
 # with open(f'tests/results/{package_name}.json', 'w') as outfile:
 #     json.dump(deps, outfile, indent=4)
 
