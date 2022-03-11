@@ -17,6 +17,7 @@ github = github3.login(token=token)
 
 # TODO: walk through directory https://github.com/matplotlib/matplotlib/tree/main/requirements
 
+
 def handle_requirements(uritemplate, path):
     req = uritemplate.file_contents(path).decoded.decode('utf-8')
 
@@ -67,7 +68,10 @@ def fetch_deps(package_name):
     if 'github' not in url:
         return
 
-    owner, repository = url.replace('https://github.com/', '').split("/")
+    if url[-1] == '/':
+        url = url[:-1]
+    
+    owner, repository = url.replace('https://github.com/', '').replace('http://github.com/', '').split("/")
     uritemplate = github.repository(owner, repository)
 
     for content in uritemplate.directory_contents(''):
@@ -118,8 +122,10 @@ if __name__ == "__main__":
     # package_name = 'PyYAML'
     # package_name = 'numpy'
     # package_name = 'click'
-    package_name = 'botocore'
+    # package_name = 'botocore'
     # package_name = 'matplotlib'
+    # package_name = 'attrs'
+    package_name = 'pyrsistent'
     deps = fetch_deps(package_name)
 
     with open(f'tests/results/{package_name}.json', 'w') as outfile:
