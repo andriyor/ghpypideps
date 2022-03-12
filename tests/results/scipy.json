@@ -1,0 +1,15 @@
+{
+    "doc_requirements.txt": [
+        "Sphinx!=3.1.0, !=4.1.0",
+        "pydata-sphinx-theme>=0.6.1",
+        "sphinx-panels>=0.5.2",
+        "matplotlib>2"
+    ],
+    "mypy_requirements.txt": [
+        "mypy==0.931",
+        "typing_extensions"
+    ],
+    "pypi": [
+        "numpy (<1.25.0,>=1.17.3)"
+    ]
+}

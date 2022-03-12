@@ -20,8 +20,6 @@ OPTIONS_EXTRAS_REQUIRE = 'options.extras_require'
 token = os.environ.get('GITHUB_TOKEN')
 github = github3.login(token=token)
 
-# TODO: walk through directory https://github.com/matplotlib/matplotlib/tree/main/requirements
-
 
 def handle_requirements(uritemplate, path):
     req = uritemplate.file_contents(path).decoded.decode('utf-8')
@@ -65,6 +63,7 @@ def get_from_pypi(package_name):
     return requires_dist
 
 
+# Jinja2
 def handle_setup_cfg(uritemplate):
     setup_req = []
     req = uritemplate.file_contents(SETUP_CFG).decoded.decode('utf-8')
@@ -78,6 +77,20 @@ def handle_setup_cfg(uritemplate):
     if OPTIONS_EXTRAS_REQUIRE in sections:
         for key in config[OPTIONS_EXTRAS_REQUIRE]:
             setup_req.extend(config[OPTIONS_EXTRAS_REQUIRE][key].strip().split('\n'))
+
+    # tqdm
+    if 'options' in sections:
+        setup_requires = config['options'].get('setup_requires')
+        if setup_requires:
+            setup_req.extend(setup_requires.strip().split('\n'))
+
+        tests_require = config['options'].get('tests_require')
+        if tests_require:
+            setup_req.extend(tests_require.strip().split('\n'))
+        
+        install_requires = config['options'].get('install_requires')
+        if tests_require:
+            setup_req.extend(install_requires.strip().split('\n'))
 
     os.remove(SETUP_CFG)
     return setup_req
@@ -100,6 +113,8 @@ def fetch_deps(package_name):
     for content in uritemplate.directory_contents(''):
         content_obj = content[1]
 
+        # click
+        # TODO: walk through directory https://github.com/matplotlib/matplotlib/tree/main/requirements
         if content_obj.type == 'dir' and content_obj.name == 'requirements':
             for dir_content in uritemplate.directory_contents(content_obj.name):
                 if '.txt' in dir_content[0] and 'lock' not in dir_content[0]:
@@ -156,7 +171,16 @@ if __name__ == "__main__":
     # package_name = 'pyrsistent'
     # package_name = 'jmespath'
     # package_name = 'Jinja2'
-    package_name = 'PyJWT'
+    # package_name = 'PyJWT'
+    # package_name = 'oauthlib'
+    # package_name = 'requests-oauthlib'
+    # package_name = 'google-cloud-core'
+    # package_name = 'Werkzeug'
+    # package_name = 'Flask'
+    # package_name = 'scipy'
+    # package_name = 'Pillow'
+    # package_name = 'pluggy'
+    package_name = 'tqdm'
     deps = fetch_deps(package_name)
 
     with open(f'tests/results/{package_name}.json', 'w') as outfile:

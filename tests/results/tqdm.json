@@ -1,0 +1,29 @@
+{
+  "setup.cfg": [
+    "py-make>=0.1.0; twine; wheel",
+    "requests",
+    "ipywidgets>=6",
+    "setuptools>=42; setuptools_scm[toml]>=3.4",
+    "tox",
+    "colorama; platform_system == 'Windows'",
+    "importlib_resources; python_version < \"3.7\""
+  ],
+  "pypi": [
+    "colorama ; platform_system == \"Windows\"",
+    "importlib-resources ; python_version < \"3.7\"",
+    "py-make (>=0.1.0) ; extra == 'dev'",
+    "twine ; extra == 'dev'",
+    "wheel ; extra == 'dev'",
+    "ipywidgets (>=6) ; extra == 'notebook'",
+    "requests ; extra == 'telegram'"
+  ],
+  ".meta/requirements-test.txt": [
+    "pre-commit",
+    "pytest",
+    "pytest-cov",
+    "pytest-timeout",
+    "nbval",
+    "ipywidgets"
+  ],
+  ".meta/requirements-build.txt": ["py-make>=0.1.0", "twine", "wheel"]
+}
