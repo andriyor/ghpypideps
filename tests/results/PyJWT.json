@@ -1,0 +1,38 @@
+{
+    "setup.cfg": [
+        "sphinx",
+        "sphinx-rtd-theme",
+        "zope.interface",
+        "cryptography>=3.3.1",
+        "pytest>=6.0.0,<7.0.0",
+        "coverage[toml]==5.0.4",
+        "sphinx",
+        "sphinx-rtd-theme",
+        "zope.interface",
+        "cryptography>=3.3.1",
+        "pytest>=6.0.0,<7.0.0",
+        "coverage[toml]==5.0.4",
+        "mypy",
+        "pre-commit"
+    ],
+    "pypi": [
+        "cryptography (>=3.3.1) ; extra == 'crypto'",
+        "sphinx ; extra == 'dev'",
+        "sphinx-rtd-theme ; extra == 'dev'",
+        "zope.interface ; extra == 'dev'",
+        "cryptography (>=3.3.1) ; extra == 'dev'",
+        "pytest (<7.0.0,>=6.0.0) ; extra == 'dev'",
+        "coverage[toml] (==5.0.4) ; extra == 'dev'",
+        "mypy ; extra == 'dev'",
+        "pre-commit ; extra == 'dev'",
+        "sphinx ; extra == 'docs'",
+        "sphinx-rtd-theme ; extra == 'docs'",
+        "zope.interface ; extra == 'docs'",
+        "pytest (<7.0.0,>=6.0.0) ; extra == 'tests'",
+        "coverage[toml] (==5.0.4) ; extra == 'tests'"
+    ],
+    "docs/requirements-docs.txt": [
+        "sphinx",
+        "sphinx_rtd_theme"
+    ]
+}

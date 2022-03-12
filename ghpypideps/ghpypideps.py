@@ -3,6 +3,7 @@ import os
 # [python - Proper way to parse requirements file after pip upgrade to pip 10.x.x? - Stack Overflow](https://stackoverflow.com/questions/49689880/proper-way-to-parse-requirements-file-after-pip-upgrade-to-pip-10-x-x)
 from pip._internal.network.session import PipSession
 from pip._internal.req import parse_requirements
+import configparser
 
 import github3
 import httpx
@@ -11,6 +12,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from source_finder import find_source_repo
+
+config = configparser.ConfigParser()
+SETUP_CFG = 'setup.cfg'
+OPTIONS_EXTRAS_REQUIRE = 'options.extras_require'
 
 token = os.environ.get('GITHUB_TOKEN')
 github = github3.login(token=token)
@@ -60,6 +65,24 @@ def get_from_pypi(package_name):
     return requires_dist
 
 
+def handle_setup_cfg(uritemplate):
+    setup_req = []
+    req = uritemplate.file_contents(SETUP_CFG).decoded.decode('utf-8')
+    
+    with open(SETUP_CFG, "w") as file1:
+        file1.write(req)
+    
+    config.read(SETUP_CFG)
+    sections = config.sections()
+
+    if OPTIONS_EXTRAS_REQUIRE in sections:
+        for key in config[OPTIONS_EXTRAS_REQUIRE]:
+            setup_req.extend(config[OPTIONS_EXTRAS_REQUIRE][key].strip().split('\n'))
+
+    os.remove(SETUP_CFG)
+    return setup_req
+
+
 def fetch_deps(package_name):
     req_files = []
     all_req = {}
@@ -97,6 +120,11 @@ def fetch_deps(package_name):
                 print(req)
                 print()
 
+            if content_obj.name == SETUP_CFG:
+                print(content_obj.path)
+                setup_req = handle_setup_cfg(uritemplate)
+                print(setup_req)
+                all_req[SETUP_CFG] = setup_req
 
     requires_dist = get_from_pypi(package_name)
     all_req['pypi'] = requires_dist
@@ -125,7 +153,10 @@ if __name__ == "__main__":
     # package_name = 'botocore'
     # package_name = 'matplotlib'
     # package_name = 'attrs'
-    package_name = 'pyrsistent'
+    # package_name = 'pyrsistent'
+    # package_name = 'jmespath'
+    # package_name = 'Jinja2'
+    package_name = 'PyJWT'
     deps = fetch_deps(package_name)
 
     with open(f'tests/results/{package_name}.json', 'w') as outfile:

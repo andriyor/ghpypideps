@@ -1,0 +1,23 @@
+{
+    "requirements-docs.txt": [
+        "Sphinx==1.2b3",
+        "guzzle-sphinx-theme==0.3.1"
+    ],
+    "requirements.txt": [
+        "wheel==0.24.0",
+        "pytest==6.2.5 ; python_version >= '3.6'",
+        "pytest<5.0 ; python_version < '3.6'",
+        "pytest-cov==3.0.0 ; python_version >= '3.6'",
+        "pytest-cov<3.0.0 ; python_version < '3.6'",
+        "hypothesis==3.1.0 ; python_version < '3.8'",
+        "hypothesis==5.5.4 ; python_version == '3.8'",
+        "hypothesis==5.35.4 ; python_version == '3.9'"
+    ],
+    "requirements26.txt": [
+        "ordereddict==1.1",
+        "unittest2==0.5.1",
+        "simplejson==3.6.5"
+    ],
+    "setup.cfg": [],
+    "pypi": []
+}
