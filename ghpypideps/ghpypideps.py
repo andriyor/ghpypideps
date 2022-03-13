@@ -198,7 +198,6 @@ def fetch_deps(package_name):
                             print()
                             all_req[nested_dir_content[1].path] = req
 
-
         if content_obj.type == 'file':
             if 'requirements' in content_obj.name and '.txt' in content_obj.name and 'lock' not in content_obj.name:
                 print(content_obj.name)
