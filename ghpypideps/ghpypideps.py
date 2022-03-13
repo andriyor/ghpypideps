@@ -59,28 +59,14 @@ class Analyzer(ast.NodeVisitor):
         if is_setup or is_setuptools_setup:
             assigns_keys = self.assigns.keys()
             for key in node.keywords:
-                # TODO: refactor
-                if key.arg == 'tests_require':
-                    if isinstance(key.value, ast.Name) and key.value.id in assigns_keys:
-                        self.req['tests_require'] = self.assigns[key.value.id]
+                # handle BinOp? https://github.com/matplotlib/matplotlib/blob/main/setup.py#L308
+                for setup_arg in ['setup_requires', 'tests_require', 'install_requires']:
+                    if key.arg == setup_arg:
+                        if isinstance(key.value, ast.Name) and key.value.id in assigns_keys:
+                            self.req[setup_arg] = self.assigns[key.value.id]
 
-                    if isinstance(key.value, ast.List):
-                        self.req['tests_require'] = [elt.value for elt in key.value.elts]
-                
-                if key.arg == 'setup_requires':
-                    if isinstance(key.value, ast.Name) and key.value.id in assigns_keys:
-                        self.req['setup_requires'] = self.assigns[key.value.id]
-
-                    if isinstance(key.value, ast.List):
-                        self.req['setup_requires'] = [elt.value for elt in key.value.elts]
-                
-                if key.arg == 'install_requires':
-                    # handle BinOp? https://github.com/matplotlib/matplotlib/blob/main/setup.py#L308
-                    if isinstance(key.value, ast.Name) and key.value.id in assigns_keys:
-                        self.req['install_requires'] = self.assigns[key.value.id]
-
-                    if isinstance(key.value, ast.List):
-                        self.req['install_requires'] = [elt.value for elt in key.value.elts]
+                        if isinstance(key.value, ast.List):
+                            self.req['tests_require'] = [elt.value for elt in key.value.elts]
 
                 # TODO: use dict for kkeys?
                 if key.arg == 'extras_require':
@@ -163,17 +149,10 @@ def handle_setup_cfg(uritemplate):
 
     # tqdm
     if 'options' in sections:
-        setup_requires = config['options'].get('setup_requires')
-        if setup_requires:
-            setup_req.extend(setup_requires.strip().split('\n'))
-
-        tests_require = config['options'].get('tests_require')
-        if tests_require:
-            setup_req.extend(tests_require.strip().split('\n'))
-        
-        install_requires = config['options'].get('install_requires')
-        if tests_require:
-            setup_req.extend(install_requires.strip().split('\n'))
+        for section in ['setup_requires', 'tests_require', 'install_requires']:
+            requires = config['options'].get(section)
+            if requires:
+                setup_req.extend(requires.strip().split('\n'))
 
     os.remove(SETUP_CFG)
     return setup_req
@@ -259,7 +238,7 @@ if __name__ == "__main__":
     # package_name = 'urllib3'
     # package_name = 'PyYAML'
     # package_name = 'numpy'
-    # package_name = 'click'
+    package_name = 'click'
     # package_name = 'botocore'
     # package_name = 'matplotlib'
     # package_name = 'attrs'
@@ -279,7 +258,7 @@ if __name__ == "__main__":
     # package_name = 'GitPython'
     # package_name = 'gunicorn'
     # package_name = 'PyNaCl'
-    package_name = 'requests'
+    # package_name = 'requests'
 
     deps = fetch_deps(package_name)
     with open(f'tests/results/{package_name}.json', 'w') as outfile:
