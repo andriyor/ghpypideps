@@ -1,6 +1,6 @@
 # ghpypideps
 
-The goal of this tool is to get as much as possible dependencies that used in python package (including test, dev, doc dependencies)
+The goal of this tool is to get as much as possible dependencies that used in repository of python package (including test, dev, doc dependencies)
 
 ## Dependencies received from several sources 
 
@@ -136,6 +136,20 @@ poetry install
 poetry run python ghpypideps/ghpypideps.py
 poetry run pytest --ignore=__pypackages__ -vv
 ```
+
+
+
+## Similar projects
+
+- [wimglenn/johnnydep: Display dependency tree of Python distribution](https://github.com/wimglenn/johnnydep)
+
+##  Helpful links
+
+- [python - Is there a way to list pip dependencies/requirements? - Stack Overflow](https://stackoverflow.com/questions/11147667/is-there-a-way-to-list-pip-dependencies-requirements)
+- [ast — Abstract Syntax Trees — Python 3.10.2 documentation](https://docs.python.org/3/library/ast.html)
+- [python - Proper way to parse requirements file after pip upgrade to pip 10.x.x? - Stack Overflow](https://stackoverflow.com/questions/49689880/proper-way-to-parse-requirements-file-after-pip-upgrade-to-pip-10-x-x)
+- [pypi-tools/source_finder.py at main · hugovk/pypi-tools](https://github.com/hugovk/pypi-tools/blob/main/source_finder.py)
+
 
 ## License
 

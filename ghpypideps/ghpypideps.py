@@ -245,10 +245,10 @@ def fetch_deps(package_name):
 if __name__ == "__main__":
     # package_name = 'python-dateutil'
     # package_name = 'six'
-    # package_name = 'urllib3'
+    package_name = 'urllib3'
     # package_name = 'PyYAML'
     # package_name = 'numpy'
-    package_name = 'click'
+    # package_name = 'click'
     # package_name = 'botocore'
     # package_name = 'matplotlib'
     # package_name = 'attrs'
