@@ -175,18 +175,29 @@ def fetch_deps(package_name):
     for content in uritemplate.directory_contents(''):
         content_obj = content[1]
 
-        # click
-        # TODO: walk through directory https://github.com/matplotlib/matplotlib/tree/main/requirements
         if content_obj.type == 'dir' and content_obj.name == 'requirements':
             for dir_content in uritemplate.directory_contents(content_obj.name):
-                if '.txt' in dir_content[0] and 'lock' not in dir_content[0]:
-                    req_files.append(content[0])
-                    print(f'{content[1].path}/{dir_content[0]}')
-                    full_path = f'{content_obj.path}/{dir_content[0]}'
-                    req = handle_requirements(uritemplate, full_path)
-                    print(req)
-                    print()
-                    all_req[full_path] = req
+                # click
+                if dir_content[1].type == 'file':
+                    if '.txt' in dir_content[0] and 'lock' not in dir_content[0]:
+                        req_files.append(content[0])
+                        print(dir_content[1].path)
+                        req = handle_requirements(uritemplate, dir_content[1].path)
+                        print(req)
+                        print()
+                        all_req[dir_content[1].path] = req
+
+                # matplotlib
+                if dir_content[1].type == 'dir':
+                    for nested_dir_content in uritemplate.directory_contents(dir_content[1].path):
+                        if '.txt' in nested_dir_content[0] and 'lock' not in nested_dir_content[0]:
+                            req_files.append(nested_dir_content[0])
+                            print(nested_dir_content[1].path)
+                            req = handle_requirements(uritemplate, nested_dir_content[1].path)
+                            print(req)
+                            print()
+                            all_req[nested_dir_content[1].path] = req
+
 
         if content_obj.type == 'file':
             if 'requirements' in content_obj.name and '.txt' in content_obj.name and 'lock' not in content_obj.name:
