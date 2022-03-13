@@ -1,4 +1,14 @@
-import json
+# TODO: fix import
+# poetry run python ghpypideps/ghpypideps.py
+# poetry run pytest --ignore=__pypackages__ -vv
+# poetry run python example.py
+
+from __future__ import absolute_import
+try:
+    from .source_finder import find_source_repo
+except (ModuleNotFoundError, ImportError) as e:
+    from source_finder import find_source_repo
+
 import os
 import ast
 # [python - Proper way to parse requirements file after pip upgrade to pip 10.x.x? - Stack Overflow](https://stackoverflow.com/questions/49689880/proper-way-to-parse-requirements-file-after-pip-upgrade-to-pip-10-x-x)
@@ -11,8 +21,6 @@ import httpx
 from dotenv import load_dotenv
 
 load_dotenv()
-
-from source_finder import find_source_repo
 
 config = configparser.ConfigParser()
 SETUP_CFG = 'setup.cfg'
@@ -38,14 +46,14 @@ class Analyzer(ast.NodeVisitor):
                     if isinstance(elr, ast.Constant):
                         constants.append(elr.value)
                 self.assigns[node.targets[0].id] = constants
-            
+
             if isinstance(node.value, ast.Dict):
                 constants = []
                 for val in node.value.values:
                     # python-cloud-core extras
                     if isinstance(val, ast.Constant):
                         constants.append(val.value)
-                    
+
                     # attrs
                     if isinstance(val, ast.List):
                         for elr in val.elts:
@@ -101,7 +109,7 @@ def handle_requirements(uritemplate, path):
     req_file_name = 'requirements.txt'
     with open(req_file_name, "w") as file1:
         file1.write("\n".join(new_lines))
-    
+
     req = [r.requirement for r in parse_requirements(req_file_name, session=PipSession())]
     os.remove(req_file_name)
     return req
@@ -109,17 +117,13 @@ def handle_requirements(uritemplate, path):
 
 def search_requirements(uritemplate, owner, repository, req_files):
     url = f'https://api.github.com/search/code?q=repo:{owner}/{repository}+filename:requirements.txt'
-    print(url)
     r = httpx.get(url)
 
     searched_req = {}
     for item in r.json()['items']:
         if item['name'] not in req_files and 'lock' not in item['name']:
-            print(item['path'])
             req = handle_requirements(uritemplate, item['path'])
             searched_req[item['path']] = req
-            print(req)
-            print()
     return searched_req
 
 
@@ -136,10 +140,10 @@ def get_from_pypi(package_name):
 def handle_setup_cfg(uritemplate):
     setup_req = []
     req = uritemplate.file_contents(SETUP_CFG).decoded.decode('utf-8')
-    
+
     with open(SETUP_CFG, "w") as file1:
         file1.write(req)
-    
+
     config.read(SETUP_CFG)
     sections = config.sections()
 
@@ -168,7 +172,7 @@ def fetch_deps(package_name):
 
     if url[-1] == '/':
         url = url[:-1]
-    
+
     owner, repository = url.replace('https://github.com/', '').replace('http://github.com/', '').split("/")
     uritemplate = github.repository(owner, repository)
 
@@ -181,10 +185,7 @@ def fetch_deps(package_name):
                 if dir_content[1].type == 'file':
                     if '.txt' in dir_content[0] and 'lock' not in dir_content[0]:
                         req_files.append(content[0])
-                        print(dir_content[1].path)
                         req = handle_requirements(uritemplate, dir_content[1].path)
-                        print(req)
-                        print()
                         all_req[dir_content[1].path] = req
 
                 # matplotlib
@@ -192,95 +193,31 @@ def fetch_deps(package_name):
                     for nested_dir_content in uritemplate.directory_contents(dir_content[1].path):
                         if '.txt' in nested_dir_content[0] and 'lock' not in nested_dir_content[0]:
                             req_files.append(nested_dir_content[0])
-                            print(nested_dir_content[1].path)
                             req = handle_requirements(uritemplate, nested_dir_content[1].path)
-                            print(req)
-                            print()
                             all_req[nested_dir_content[1].path] = req
 
         if content_obj.type == 'file':
             if 'requirements' in content_obj.name and '.txt' in content_obj.name and 'lock' not in content_obj.name:
-                print(content_obj.name)
                 req_files.append(content_obj.name)
                 req = handle_requirements(uritemplate, content_obj.name)
                 all_req[content_obj.name] = req
-                print(req)
-                print()
 
             if content_obj.name == SETUP_CFG:
-                print(content_obj.path)
                 setup_cfg_req = handle_setup_cfg(uritemplate)
-                print(setup_cfg_req)
                 all_req[SETUP_CFG] = setup_cfg_req
 
             if content_obj.name == SETUP_PY:
-                print(content_obj.path)
                 req = uritemplate.file_contents(SETUP_PY).decoded.decode('utf-8')
 
                 tree = ast.parse(req)
                 analyzer = Analyzer()
                 analyzer.visit(tree)
                 setup_py_req = analyzer.flat()
-                print(setup_py_req)
-                print()
                 all_req[SETUP_PY] = setup_py_req
 
     requires_dist = get_from_pypi(package_name)
     all_req['pypi'] = requires_dist
-    print('pypi')
-    print(requires_dist)
-    print()
-    
+
     req = search_requirements(uritemplate, owner, repository, req_files)
     all_req.update(req)
-    print('searched')
-    print(req)
-    print()
-    print('all')
-    print(all_req)
-
     return all_req
-
-
-if __name__ == "__main__":
-    # package_name = 'python-dateutil'
-    # package_name = 'six'
-    package_name = 'urllib3'
-    # package_name = 'PyYAML'
-    # package_name = 'numpy'
-    # package_name = 'click'
-    # package_name = 'botocore'
-    # package_name = 'matplotlib'
-    # package_name = 'attrs'
-    # package_name = 'pyrsistent'
-    # package_name = 'jmespath'
-    # package_name = 'Jinja2'
-    # package_name = 'PyJWT'
-    # package_name = 'oauthlib'
-    # package_name = 'requests-oauthlib'
-    # package_name = 'google-cloud-core'
-    # package_name = 'Werkzeug'
-    # package_name = 'Flask'
-    # package_name = 'scipy'
-    # package_name = 'Pillow'
-    # package_name = 'pluggy'
-    # package_name = 'tqdm'
-    # package_name = 'GitPython'
-    # package_name = 'gunicorn'
-    # package_name = 'PyNaCl'
-    # package_name = 'requests'
-
-    deps = fetch_deps(package_name)
-    with open(f'tests/results/{package_name}.json', 'w') as outfile:
-        json.dump(deps, outfile, indent=2)
-
-
-    # with open("examples/setup_mat.py", "r") as source:
-    #     tree = ast.parse(source.read())
-    #     print(ast.dump(tree, indent=4))
-
-    # analyzer = Analyzer()
-    # analyzer.visit(tree)
-    # print(analyzer.assigns)
-    # print(analyzer.req)
-    # print(analyzer.flat())

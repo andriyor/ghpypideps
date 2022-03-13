@@ -10,9 +10,21 @@ The goal of this tool is to get as much as possible dependencies that used in re
 - pypi API
 - GitHub search
 
+## Usage
+
+[Create a token](https://github.com/settings/tokens/new?scopes=public_repo&description=ghtopdep) with the public_repo permission.
+
+export GITHUB_TOKEN="************************"
+
 ## Example
 
-For Flask
+```python
+import json
+from ghpypideps.ghpypideps import fetch_deps
+
+deps = fetch_deps('Flask')
+print(json.dumps(deps, indent=2))
+```
 
 ```json
 {
