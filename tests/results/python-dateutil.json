@@ -10,7 +10,13 @@
     "build >= 0.3.0 ; python_version >= '3.6'",
     "attrs!=21.1.0"
   ],
-  "pypi": ["six (>=1.5)"],
+  "setup.cfg": [
+    "setuptools_scm"
+  ],
+  "setup.py": [],
+  "pypi": [
+    "six (>=1.5)"
+  ],
   "docs/requirements-docs.txt": [
     "Sphinx>=1.7.3,!=1.8.0",
     "sphinx_rtd_theme>=0.3.0"

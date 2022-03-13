@@ -1,24 +1,28 @@
 {
-    "requirements-test-27.txt": [
-        "coveralls==1.11.1",
-        "mock==3.0.5",
-        "requests-mock==1.9.3",
-        "requests==2.26.0",
-        "oauthlib[signedtoken]==3.1.0"
-    ],
-    "requirements-test.txt": [
-        "coveralls==3.2.0",
-        "mock==4.0.3",
-        "requests-mock==1.9.3"
-    ],
-    "requirements.txt": [
-        "requests==2.26.0",
-        "oauthlib[signedtoken]==3.1.1"
-    ],
-    "setup.cfg": [],
-    "pypi": [
-        "oauthlib (>=3.0.0)",
-        "requests (>=2.0.0)",
-        "oauthlib[signedtoken] (>=3.0.0) ; extra == 'rsa'"
-    ]
+  "requirements-test-27.txt": [
+    "coveralls==1.11.1",
+    "mock==3.0.5",
+    "requests-mock==1.9.3",
+    "requests==2.26.0",
+    "oauthlib[signedtoken]==3.1.0"
+  ],
+  "requirements-test.txt": [
+    "coveralls==3.2.0",
+    "mock==4.0.3",
+    "requests-mock==1.9.3"
+  ],
+  "requirements.txt": ["requests==2.26.0", "oauthlib[signedtoken]==3.1.1"],
+  "setup.cfg": [],
+  "setup.py": [
+    "oauthlib>=3.0.0",
+    "requests>=2.0.0",
+    "oauthlib[signedtoken]>=3.0.0",
+    "mock;python_version<\"3.3\"",
+    "requests-mock"
+  ],
+  "pypi": [
+    "oauthlib (>=3.0.0)",
+    "requests (>=2.0.0)",
+    "oauthlib[signedtoken] (>=3.0.0) ; extra == 'rsa'"
+  ]
 }

@@ -1,8 +1,13 @@
 {
-    "setup.cfg": [],
-    "pypi": [
-        "google-api-core (!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0dev,>=1.31.5)",
-        "google-auth (<3.0dev,>=1.25.0)",
-        "grpcio (<2.0dev,>=1.8.2) ; extra == 'grpc'"
-    ]
+  "setup.cfg": [],
+  "setup.py": [
+    "google-api-core >= 1.31.5, <3.0.0dev,!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0",
+    "google-auth >= 1.25.0, < 3.0dev",
+    "grpcio >= 1.8.2, < 2.0dev"
+  ],
+  "pypi": [
+    "google-api-core (!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0dev,>=1.31.5)",
+    "google-auth (<3.0dev,>=1.25.0)",
+    "grpcio (<2.0dev,>=1.8.2) ; extra == 'grpc'"
+  ]
 }

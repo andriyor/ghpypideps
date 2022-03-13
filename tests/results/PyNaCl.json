@@ -1,0 +1,13 @@
+{
+  "setup.cfg": [],
+  "setup.py": [
+    "setuptools",
+    "pytest>=3.2.1,!=3.3.0",
+    "hypothesis>=3.27.0",
+    "sphinx>=1.6.5",
+    "sphinx_rtd_theme",
+    "pytest>=3.2.1,!=3.3.0",
+    "hypothesis>=3.27.0"
+  ],
+  "pypi": []
+}

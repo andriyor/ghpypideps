@@ -1,40 +1,42 @@
 {
-    "dev-requirements.txt": [
-        "coverage==6.3.1",
-        "tornado==6.1",
-        "PySocks==1.7.1",
-        "pytest==7.0.0",
-        "pytest-timeout==2.1.0",
-        "pytest-freezegun==0.4.2",
-        "flaky==3.7.0",
-        "trustme==0.9.0",
-        "cryptography==35.0.0",
-        "backports.zoneinfo==0.2.1;python_version<\"3.9\"",
-        "towncrier==21.9.0"
-    ],
-    "mypy-requirements.txt": [
-        "mypy==0.931",
-        "idna>=2.0.0",
-        "cryptography>=1.3.4",
-        "tornado>=6.1",
-        "pytest>=6.2",
-        "trustme==0.9.0",
-        "types-backports",
-        "nox"
-    ],
-    "pypi": [
-        "brotlipy (>=0.6.0) ; extra == 'brotli'",
-        "pyOpenSSL (>=0.14) ; extra == 'secure'",
-        "cryptography (>=1.3.4) ; extra == 'secure'",
-        "idna (>=2.0.0) ; extra == 'secure'",
-        "certifi ; extra == 'secure'",
-        "ipaddress ; (python_version == \"2.7\") and extra == 'secure'",
-        "PySocks (!=1.5.7,<2.0,>=1.5.6) ; extra == 'socks'"
-    ],
-    "docs/requirements.txt": [
-        "sphinx>3.0.0",
-        "requests>=2,<2.16",
-        "furo",
-        "sphinx-copybutton"
-    ]
+  "dev-requirements.txt": [
+    "coverage==6.3.1",
+    "tornado==6.1",
+    "PySocks==1.7.1",
+    "pytest==7.0.0",
+    "pytest-timeout==2.1.0",
+    "pytest-freezegun==0.4.2",
+    "flaky==3.7.0",
+    "trustme==0.9.0",
+    "cryptography==35.0.0",
+    "backports.zoneinfo==0.2.1;python_version<\"3.9\"",
+    "towncrier==21.9.0"
+  ],
+  "mypy-requirements.txt": [
+    "mypy==0.931",
+    "idna>=2.0.0",
+    "cryptography>=1.3.4",
+    "tornado>=6.1",
+    "pytest>=6.2",
+    "trustme==0.9.0",
+    "types-backports",
+    "nox"
+  ],
+  "setup.cfg": [],
+  "setup.py": [],
+  "pypi": [
+    "brotlipy (>=0.6.0) ; extra == 'brotli'",
+    "pyOpenSSL (>=0.14) ; extra == 'secure'",
+    "cryptography (>=1.3.4) ; extra == 'secure'",
+    "idna (>=2.0.0) ; extra == 'secure'",
+    "certifi ; extra == 'secure'",
+    "ipaddress ; (python_version == \"2.7\") and extra == 'secure'",
+    "PySocks (!=1.5.7,<2.0,>=1.5.6) ; extra == 'socks'"
+  ],
+  "docs/requirements.txt": [
+    "sphinx>3.0.0",
+    "requests>=2,<2.16",
+    "furo",
+    "sphinx-copybutton"
+  ]
 }

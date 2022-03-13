@@ -9,6 +9,7 @@
         "mypy==0.931",
         "typing_extensions"
     ],
+    "setup.py": [],
     "pypi": [
         "numpy (<1.25.0,>=1.17.3)"
     ]

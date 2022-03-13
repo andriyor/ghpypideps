@@ -1,0 +1,20 @@
+{
+  "requirements_dev.txt": ["sphinx", "sphinx_rtd_theme"],
+  "requirements_test.txt": [
+    "aiohttp",
+    "gevent",
+    "eventlet",
+    "coverage",
+    "pytest",
+    "pytest-cov"
+  ],
+  "setup.cfg": [],
+  "setup.py": ["setuptools>=3.0"],
+  "pypi": [],
+  "examples/frameworks/requirements_pyramidapp.txt": ["pyramid"],
+  "examples/frameworks/requirements_cherryapp.txt": ["cherrypy"],
+  "examples/frameworks/requirements_webpyapp.txt": ["web-py"],
+  "examples/frameworks/requirements_flaskapp.txt": ["flask"],
+  "examples/frameworks/requirements.txt": [],
+  "examples/frameworks/requirements_tornadoapp.txt": ["tornado<6"]
+}

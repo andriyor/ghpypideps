@@ -1,16 +1,17 @@
 {
-    "setup.cfg": [
-        "pre-commit",
-        "tox",
-        "pytest",
-        "pytest-benchmark",
-        "setuptools-scm"
-    ],
-    "pypi": [
-        "importlib-metadata (>=0.12) ; python_version < \"3.8\"",
-        "pre-commit ; extra == 'dev'",
-        "tox ; extra == 'dev'",
-        "pytest ; extra == 'testing'",
-        "pytest-benchmark ; extra == 'testing'"
-    ]
+  "setup.cfg": [
+    "pre-commit",
+    "tox",
+    "pytest",
+    "pytest-benchmark",
+    "setuptools-scm"
+  ],
+  "setup.py": [],
+  "pypi": [
+    "importlib-metadata (>=0.12) ; python_version < \"3.8\"",
+    "pre-commit ; extra == 'dev'",
+    "tox ; extra == 'dev'",
+    "pytest ; extra == 'testing'",
+    "pytest-benchmark ; extra == 'testing'"
+  ]
 }

@@ -76,6 +76,7 @@
     "typing-extensions==4.0.1"
   ],
   "setup.cfg": [],
+  "setup.py": ["watchdog"],
   "pypi": [
     "dataclasses ; python_version < \"3.7\"",
     "watchdog ; extra == 'watchdog'"
