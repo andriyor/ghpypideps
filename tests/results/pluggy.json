@@ -4,7 +4,8 @@
     "tox",
     "pytest",
     "pytest-benchmark",
-    "setuptools-scm"
+    "setuptools-scm",
+    "importlib-metadata>=0.12;python_version<\"3.8\""
   ],
   "setup.py": [],
   "pypi": [

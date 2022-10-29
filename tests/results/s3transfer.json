@@ -1,0 +1,25 @@
+{
+  "requirements-dev.txt": [
+    "psutil>=4.1.0,<5.0.0",
+    "tabulate==0.7.5",
+    "coverage==5.5",
+    "wheel==0.37.0",
+    "pytest==7.1.2",
+    "pytest-cov==2.12.1",
+    "atomicwrites>=1.0",
+    "colorama>0.3.0"
+  ],
+  "requirements.txt": [
+    "git+https://github.com/boto/botocore.git@develop#egg=botocore"
+  ],
+  "setup.cfg": [
+    "botocore[crt]>=1.20.29,<2.0a0"
+  ],
+  "setup.py": [
+    "botocore>=1.12.36,<2.0a.0"
+  ],
+  "pypi": [
+    "botocore (<2.0a.0,>=1.12.36)",
+    "botocore[crt] (<2.0a.0,>=1.20.29) ; extra == 'crt'"
+  ]
+}

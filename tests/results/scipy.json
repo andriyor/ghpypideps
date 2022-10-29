@@ -1,16 +1,35 @@
 {
-    "doc_requirements.txt": [
-        "Sphinx!=3.1.0, !=4.1.0",
-        "pydata-sphinx-theme>=0.6.1",
-        "sphinx-panels>=0.5.2",
-        "matplotlib>2"
-    ],
-    "mypy_requirements.txt": [
-        "mypy==0.931",
-        "typing_extensions"
-    ],
-    "setup.py": [],
-    "pypi": [
-        "numpy (<1.25.0,>=1.17.3)"
-    ]
+  "doc_requirements.txt": [
+    "Sphinx!=4.1.0",
+    "pydata-sphinx-theme==0.9.0",
+    "sphinx-design>=0.2.0",
+    "numpydoc",
+    "matplotlib>2"
+  ],
+  "mypy_requirements.txt": [
+    "mypy==0.931",
+    "typing_extensions"
+  ],
+  "setup.py": [],
+  "pypi": [
+    "numpy<1.26.0,>=1.18.5",
+    "pytest; extra == \"test\"",
+    "pytest-cov; extra == \"test\"",
+    "pytest-xdist; extra == \"test\"",
+    "asv; extra == \"test\"",
+    "mpmath; extra == \"test\"",
+    "gmpy2; extra == \"test\"",
+    "threadpoolctl; extra == \"test\"",
+    "scikit-umfpack; extra == \"test\"",
+    "sphinx!=4.1.0; extra == \"doc\"",
+    "pydata-sphinx-theme==0.9.0; extra == \"doc\"",
+    "sphinx-panels>=0.5.2; extra == \"doc\"",
+    "matplotlib>2; extra == \"doc\"",
+    "numpydoc; extra == \"doc\"",
+    "sphinx-tabs; extra == \"doc\"",
+    "mypy; extra == \"dev\"",
+    "typing_extensions; extra == \"dev\"",
+    "pycodestyle; extra == \"dev\"",
+    "flake8; extra == \"dev\""
+  ]
 }

@@ -1,29 +1,32 @@
 {
-    "requirements-dev.txt": [
-        "flake8-type-checking;python_version>=\"3.8\"",
-        "pytest-icdiff",
-        "tox"
-    ],
-    "requirements.txt": [
-        "gitdb>=4.0.1,<5",
-        "typing-extensions>=3.7.4.3;python_version<\"3.8\""
-    ],
-    "setup.py": [],
-    "test-requirements.txt": [
-        "ddt>=1.1.1, !=1.4.3",
-        "mypy",
-        "flake8",
-        "flake8-bugbear",
-        "flake8-comprehensions",
-        "flake8-typing-imports",
-        "virtualenv",
-        "pytest",
-        "pytest-cov",
-        "coverage[toml]",
-        "pytest-sugar"
-    ],
-    "pypi": [
-        "gitdb (<5,>=4.0.1)",
-        "typing-extensions (>=3.7.4.3) ; python_version < \"3.8\""
-    ]
+  "requirements-dev.txt": [
+    "flake8-type-checking;python_version>=\"3.8\"",
+    "black",
+    "pytest-icdiff",
+    "tox"
+  ],
+  "requirements.txt": [
+    "gitdb>=4.0.1,<5",
+    "typing-extensions>=3.7.4.3;python_version<\"3.8\""
+  ],
+  "setup.py": [],
+  "test-requirements.txt": [
+    "ddt>=1.1.1, !=1.4.3",
+    "mypy",
+    "black",
+    "flake8",
+    "flake8-bugbear",
+    "flake8-comprehensions",
+    "flake8-typing-imports",
+    "virtualenv",
+    "pytest",
+    "pytest-cov",
+    "coverage[toml]",
+    "pytest-sugar",
+    "gitdb"
+  ],
+  "pypi": [
+    "gitdb (<5,>=4.0.1)",
+    "typing-extensions (>=3.7.4.3) ; python_version < \"3.8\""
+  ]
 }

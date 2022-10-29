@@ -76,7 +76,7 @@ class Analyzer(ast.NodeVisitor):
                         if isinstance(key.value, ast.List):
                             self.req['tests_require'] = [elt.value for elt in key.value.elts]
 
-                # TODO: use dict for kkeys?
+                # TODO: use dict for keys?
                 if key.arg == 'extras_require':
                     # python-cloud-core
                     if isinstance(key.value, ast.Name) and key.value.id in assigns_keys:
@@ -149,7 +149,9 @@ def handle_setup_cfg(uritemplate):
 
     if OPTIONS_EXTRAS_REQUIRE in sections:
         for key in config[OPTIONS_EXTRAS_REQUIRE]:
-            setup_req.extend(config[OPTIONS_EXTRAS_REQUIRE][key].strip().split('\n'))
+            deps = config[OPTIONS_EXTRAS_REQUIRE][key].strip().split('\n')
+            deps_without_empty = [dep for dep in deps if dep]
+            setup_req.extend(deps_without_empty)
 
     # tqdm
     if 'options' in sections:

@@ -1,5 +1,8 @@
 {
-  "requirements-test.txt": ["pytest>=4.0", "pytest-cov>=2.6"],
+  "requirements-test.txt": [
+    "pytest>=4.0",
+    "pytest-cov>=2.6"
+  ],
   "requirements.txt": [
     "pyjwt>=2.0.0,<3",
     "blinker==1.4",

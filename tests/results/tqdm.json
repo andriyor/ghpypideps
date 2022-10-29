@@ -1,6 +1,7 @@
 {
   "setup.cfg": [
     "py-make>=0.1.0; twine; wheel",
+    "slack-sdk",
     "requests",
     "ipywidgets>=6",
     "setuptools>=42; setuptools_scm[toml]>=3.4",
@@ -16,6 +17,7 @@
     "twine ; extra == 'dev'",
     "wheel ; extra == 'dev'",
     "ipywidgets (>=6) ; extra == 'notebook'",
+    "slack-sdk ; extra == 'slack'",
     "requests ; extra == 'telegram'"
   ],
   ".meta/requirements-test.txt": [

@@ -7,21 +7,22 @@
     "ipywidgets",
     "numpydoc>=1.0",
     "packaging>=20",
-    "pydata-sphinx-theme>=0.8.0",
+    "pydata-sphinx-theme>=0.9.0",
     "mpl-sphinx-theme",
     "sphinxcontrib-svg2pdfconverter>=1.1.0",
     "sphinx-gallery>=0.10",
     "sphinx-copybutton",
-    "sphinx-panels"
+    "sphinx-design"
   ],
   "requirements/testing/all.txt": [
     "certifi",
-    "coverage<6.3",
+    "coverage!=6.3",
+    "psutil",
     "pytest!=4.6.0,!=5.4.0",
     "pytest-cov",
     "pytest-timeout",
     "pytest-xdist",
-    "python-dateutil",
+    "pytest-xvfb",
     "tornado"
   ],
   "requirements/testing/extra.txt": [
@@ -31,29 +32,27 @@
     "pandas!=0.25.0",
     "pikepdf",
     "pytz",
-    "pywin32; sys.platform == 'win32'"
+    "pywin32; sys.platform == 'win32'",
+    "xarray"
   ],
   "requirements/testing/flake8.txt": [
     "flake8>=3.8",
     "pydocstyle>=5.1.0",
-    "flake8-docstrings>=1.4.0"
+    "flake8-docstrings>=1.4.0",
+    "flake8-force"
   ],
   "requirements/testing/minver.txt": [
+    "contourpy==1.0.1",
     "cycler==0.10",
     "kiwisolver==1.0.1",
     "numpy==1.19.0",
     "packaging==20.0",
     "pillow==6.2.1",
-    "pyparsing==2.2.1",
+    "pyparsing==2.3.1",
     "python-dateutil==2.7",
     "fonttools==4.22.0"
   ],
   "setup.cfg": [],
-  "setup.py": [
-    "certifi>=2020.06.20",
-    "numpy>=1.19",
-    "setuptools_scm>=4",
-    "setuptools_scm_git_archive"
-  ],
+  "setup.py": [],
   "pypi": []
 }

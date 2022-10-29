@@ -12,6 +12,9 @@
     "pip>=20.2.3"
   ],
   "setup.cfg": [],
-  "setup.py": ["pytest<7", "hypothesis<7"],
+  "setup.py": [
+    "pytest<7",
+    "hypothesis<7"
+  ],
   "pypi": []
 }
