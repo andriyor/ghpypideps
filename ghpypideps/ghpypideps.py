@@ -110,7 +110,7 @@ def handle_requirements(uritemplate, path):
     with open(req_file_name, "w") as file1:
         file1.write("\n".join(new_lines))
 
-    req = [r.requirement for r in parse_requirements(req_file_name, session=PipSession())]
+    req = [r.requirement for r in parse_requirements(req_file_name, session=PipSession()) if r.requirement != '.']
     os.remove(req_file_name)
     return req
 
