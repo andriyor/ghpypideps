@@ -24,7 +24,7 @@ if __name__ == "__main__":
     # package_name = 'scipy'
     # package_name = 'Pillow'
     # package_name = 'pluggy'
-    # package_name = 'tqdm'
+    package_name = 'tqdm'
     # package_name = 'GitPython'
     # package_name = 'gunicorn'
     # package_name = 'PyNaCl'
@@ -34,7 +34,7 @@ if __name__ == "__main__":
     # package_name = 'chardet'
     # package_name = 'pyasn1'
     # package_name = 'futures'
-    package_name = 'setuptools'
+    # package_name = 'setuptools'
 
     deps = fetch_deps(package_name)
 

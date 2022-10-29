@@ -151,14 +151,15 @@ def handle_setup_cfg(uritemplate):
         for key in config[OPTIONS_EXTRAS_REQUIRE]:
             deps = config[OPTIONS_EXTRAS_REQUIRE][key].strip().split('\n')
             deps_without_empty = [dep for dep in deps if dep]
-            setup_req.extend(deps_without_empty)
+            setup_req.append({key: deps_without_empty})
 
     # tqdm
     if 'options' in sections:
         for section in ['setup_requires', 'tests_require', 'install_requires']:
             requires = config['options'].get(section)
             if requires:
-                setup_req.extend(requires.strip().split('\n'))
+                deps = requires.strip().split('\n')
+                setup_req.append({section: deps})
 
     os.remove(SETUP_CFG)
     return setup_req
