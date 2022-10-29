@@ -74,7 +74,7 @@ class Analyzer(ast.NodeVisitor):
                             self.req[setup_arg] = self.assigns[key.value.id]
 
                         if isinstance(key.value, ast.List):
-                            self.req['tests_require'] = [elt.value for elt in key.value.elts]
+                            self.req[setup_arg] = [elt.value for elt in key.value.elts]
 
                 # TODO: use dict for keys?
                 if key.arg == 'extras_require':
@@ -215,7 +215,7 @@ def fetch_deps(package_name):
                 tree = ast.parse(req)
                 analyzer = Analyzer()
                 analyzer.visit(tree)
-                setup_py_req = analyzer.flat()
+                setup_py_req = analyzer.req
                 all_req[SETUP_PY] = setup_py_req
 
     requires_dist = get_from_pypi(package_name)
