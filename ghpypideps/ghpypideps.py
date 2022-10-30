@@ -64,6 +64,7 @@ class Analyzer(ast.NodeVisitor):
     def visit_Call(self, node):
         is_setuptools_setup = isinstance(node.func, ast.Attribute) and hasattr(node.func.value, 'id') and node.func.value.id == 'setuptools' and node.func.attr == 'setup'
         is_setup = isinstance(node.func, ast.Name) and (node.func.id == 'setup' or is_setuptools_setup)
+
         if is_setup or is_setuptools_setup:
             assigns_keys = self.assigns.keys()
             for key in node.keywords:
@@ -75,6 +76,10 @@ class Analyzer(ast.NodeVisitor):
 
                         if isinstance(key.value, ast.List):
                             self.req.append({setup_arg: [elt.value for elt in key.value.elts]})
+
+                        # wcwidth
+                        if isinstance(key.value, ast.Constant):
+                            self.req.append({setup_arg: key.value.value.split(';')})
 
                 # TODO: use dict for keys?
                 if key.arg == 'extras_require':

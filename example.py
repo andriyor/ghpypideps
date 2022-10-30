@@ -46,13 +46,18 @@ if __name__ == "__main__":
     # package_name = 'cryptography'
     # package_name = 'google-api-core'
     # package_name = 'pandas'
-    package_name = 'google-auth'
+    # package_name = 'google-auth'
     # package_name = 'enum34'
     # package_name = 'googleapis-common-protos'
     # package_name = 'asn1crypto'
     # package_name = 'pyparsing'
     # package_name = 'pycparser'
     # package_name = 'pytest'
+    # package_name = 'zipp'
+    # package_name = 'coverage'
+    # package_name = 'wrapt'
+    # package_name = 'itsdangerous'
+    package_name = 'wcwidth'
 
     deps = fetch_deps(package_name)
 
