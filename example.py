@@ -40,7 +40,12 @@ if __name__ == "__main__":
     # package_name = 'simplejson'
     # package_name = 'boto3'
     # package_name = 'wheel'
-    package_name = 'protobuf'
+    # package_name = 'protobuf'
+    # package_name = 'pyasn1-modules'
+    # package_name = 'markupsafe'
+    # package_name = 'cachetools'
+    # package_name = 'cryptography'
+    package_name = 'google-api-core'
 
     deps = fetch_deps(package_name)
 
