@@ -157,6 +157,14 @@ def handle_setup_cfg(uritemplate):
             deps_without_empty = [dep for dep in deps if dep]
             setup_req.append({key: deps_without_empty})
 
+    # boto3
+    if 'metadata' in sections:
+        for section in ['requires_dist']:
+            requires = config['metadata'].get(section)
+            if requires:
+                deps = requires.strip().split('\n')
+                setup_req.append({section: deps})
+
     # tqdm
     if 'options' in sections:
         for section in ['setup_requires', 'tests_require', 'install_requires']:

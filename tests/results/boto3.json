@@ -24,6 +24,13 @@
       "crt": [
         "botocore[crt]>=1.21.0,<2.0a0"
       ]
+    },
+    {
+      "requires_dist": [
+        "botocore>=1.28.4,<1.29.0",
+        "jmespath>=0.7.1,<2.0.0",
+        "s3transfer>=0.6.0,<0.7.0"
+      ]
     }
   ],
   "setup.py": {

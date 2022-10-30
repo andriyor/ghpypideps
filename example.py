@@ -38,14 +38,15 @@ if __name__ == "__main__":
     # package_name = 'google-cloud-core'
     # package_name = 'colorama'
     # package_name = 'simplejson'
-    # package_name = 'boto3'
+    package_name = 'boto3'
     # package_name = 'wheel'
     # package_name = 'protobuf'
     # package_name = 'pyasn1-modules'
     # package_name = 'markupsafe'
     # package_name = 'cachetools'
     # package_name = 'cryptography'
-    package_name = 'google-api-core'
+    # package_name = 'google-api-core'
+    # package_name = 'pandas'
 
     deps = fetch_deps(package_name)
 
