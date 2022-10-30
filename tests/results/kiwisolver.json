@@ -1,0 +1,17 @@
+{
+  "lint_requirements.txt": [
+    "black",
+    "flake8",
+    "isort",
+    "mypy",
+    "pytest"
+  ],
+  "setup.py": [],
+  "pypi": [
+    "typing-extensions ; python_version < \"3.8\""
+  ],
+  "docs/requirements.txt": [
+    "sphinx>=4",
+    "sphinx-tabs"
+  ]
+}

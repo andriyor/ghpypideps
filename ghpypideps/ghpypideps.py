@@ -227,11 +227,14 @@ def fetch_deps(package_name):
             if content_obj.name == SETUP_PY:
                 req = uritemplate.file_contents(SETUP_PY).decoded.decode('utf-8')
 
-                tree = ast.parse(req)
-                analyzer = Analyzer()
-                analyzer.visit(tree)
-                setup_py_req = analyzer.req
-                all_req[SETUP_PY] = setup_py_req
+                try:
+                    tree = ast.parse(req)
+                    analyzer = Analyzer()
+                    analyzer.visit(tree)
+                    setup_py_req = analyzer.req
+                    all_req[SETUP_PY] = setup_py_req
+                except SyntaxError as e:
+                    print(e)
 
     requires_dist = get_from_pypi(package_name)
     all_req['pypi'] = requires_dist

@@ -1,0 +1,131 @@
+{
+  "setup.cfg": [
+    {
+      "asyncio": [
+        "greenlet!=0.4.17"
+      ]
+    },
+    {
+      "mypy": [
+        "mypy >= 0.910"
+      ]
+    },
+    {
+      "mssql": [
+        "pyodbc"
+      ]
+    },
+    {
+      "mssql_pymssql": [
+        "pymssql"
+      ]
+    },
+    {
+      "mssql_pyodbc": [
+        "pyodbc"
+      ]
+    },
+    {
+      "mysql": [
+        "mysqlclient>=1.4.0"
+      ]
+    },
+    {
+      "mysql_connector": [
+        "mysql-connector-python"
+      ]
+    },
+    {
+      "mariadb_connector": [
+        "mariadb>=1.0.1,!=1.1.2"
+      ]
+    },
+    {
+      "oracle": [
+        "cx_oracle>=7"
+      ]
+    },
+    {
+      "oracle_oracledb": [
+        "oracledb>=1.0.1"
+      ]
+    },
+    {
+      "postgresql": [
+        "psycopg2>=2.7"
+      ]
+    },
+    {
+      "postgresql_pg8000": [
+        "pg8000>=1.29.1"
+      ]
+    },
+    {
+      "postgresql_asyncpg": [
+        "greenlet!=0.4.17",
+        "asyncpg"
+      ]
+    },
+    {
+      "postgresql_psycopg2binary": [
+        "psycopg2-binary"
+      ]
+    },
+    {
+      "postgresql_psycopg2cffi": [
+        "psycopg2cffi"
+      ]
+    },
+    {
+      "postgresql_psycopg": [
+        "psycopg>=3.0.7"
+      ]
+    },
+    {
+      "pymysql": [
+        "pymysql"
+      ]
+    },
+    {
+      "aiomysql": [
+        "greenlet!=0.4.17",
+        "aiomysql"
+      ]
+    },
+    {
+      "asyncmy": [
+        "greenlet!=0.4.17",
+        "asyncmy>=0.2.3,!=0.2.4"
+      ]
+    },
+    {
+      "aiosqlite": [
+        "greenlet!=0.4.17",
+        "aiosqlite",
+        "typing_extensions!=3.10.0.1"
+      ]
+    },
+    {
+      "sqlcipher": [
+        "sqlcipher3_binary"
+      ]
+    },
+    {
+      "install_requires": [
+        "importlib-metadata;python_version<\"3.8\"",
+        "greenlet != 0.4.17;(platform_machine=='aarch64' or (platform_machine=='ppc64le' or (platform_machine=='x86_64' or (platform_machine=='amd64' or (platform_machine=='AMD64' or (platform_machine=='win32' or platform_machine=='WIN32'))))))",
+        "typing-extensions >= 4.1.0"
+      ]
+    }
+  ],
+  "setup.py": [],
+  "pypi": [],
+  "doc/build/requirements.txt": [
+    "git+https://github.com/sqlalchemyorg/changelog.git#egg=changelog",
+    "git+https://github.com/sqlalchemyorg/sphinx-paramlinks.git#egg=sphinx-paramlinks",
+    "git+https://github.com/sqlalchemyorg/zzzeeksphinx.git#egg=zzzeeksphinx",
+    "sphinx-copybutton",
+    "sphinx-autobuild",
+    "typing-extensions"
+  ]
+}
