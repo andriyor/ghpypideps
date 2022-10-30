@@ -124,13 +124,19 @@ def handle_requirements(uritemplate, path):
 
 def search_requirements(uritemplate, owner, repository, req_files):
     url = f'https://api.github.com/search/code?q=repo:{owner}/{repository}+filename:requirements.txt'
+    print('url')
+    print(url)
     r = httpx.get(url)
 
     searched_req = {}
-    for item in r.json()['items']:
-        if item['name'] not in req_files and 'lock' not in item['name']:
-            req = handle_requirements(uritemplate, item['path'])
-            searched_req[item['path']] = req
+
+    items = r.json().get('items')
+    if items:
+        for item in items:
+            if item['name'] not in req_files and 'lock' not in item['name']:
+                req = handle_requirements(uritemplate, item['path'])
+                searched_req[item['path']] = req
+
     return searched_req
 
 
@@ -234,6 +240,7 @@ def fetch_deps(package_name):
                     setup_py_req = analyzer.req
                     all_req[SETUP_PY] = setup_py_req
                 except SyntaxError as e:
+                    # msrest, azure-common
                     print(e)
 
     requires_dist = get_from_pypi(package_name)

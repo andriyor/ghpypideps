@@ -102,7 +102,10 @@ if __name__ == "__main__":
     # package_name = 'tensorboard'
     # package_name = 'gitdb2'
     # package_name = 'smmap2'
-    package_name = 'aiohttp'
+    # package_name = 'aiohttp'
+    # package_name = 'isort'
+    # package_name = 'msrest'
+    package_name = 'oauth2client'
 
     deps = fetch_deps(package_name)
 
