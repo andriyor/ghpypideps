@@ -1,0 +1,20 @@
+{
+  "dev-requirements.txt": [
+    "setuptools",
+    "wheel"
+  ],
+  "setup.cfg": [],
+  "setup.py": [
+    {
+      "extras_require": [
+        "Sphinx",
+        "docutils < 0.18; python_version < \"3\"",
+        "objgraph",
+        "faulthandler; python_version == \"2.7\" and platform_python_implementation == \"CPython\""
+      ]
+    }
+  ],
+  "pypi": [
+    "Sphinx ; extra == 'docs'"
+  ]
+}

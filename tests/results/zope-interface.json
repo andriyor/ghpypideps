@@ -1,0 +1,27 @@
+{
+  "setup.cfg": [],
+  "setup.py": [
+    {
+      "tests_require": [
+        "coverage >= 5.0.3",
+        "zope.event",
+        "zope.testing"
+      ]
+    },
+    {
+      "install_requires": [
+        "setuptools"
+      ]
+    },
+    {
+      "extras_require": [
+        "Sphinx",
+        "repoze.sphinx.autointerface",
+        "coverage >= 5.0.3",
+        "zope.event",
+        "zope.testing"
+      ]
+    }
+  ],
+  "pypi": []
+}

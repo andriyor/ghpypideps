@@ -92,7 +92,11 @@ class Analyzer(ast.NodeVisitor):
                         for val in key.value.values:
                             # nacl
                             if isinstance(val, ast.Name):
-                                extras_require.extend(self.assigns[val.id])
+                                deps = self.assigns.get(val.id)
+                                # zope.interface
+                                if deps:
+                                    extras_require.extend(deps)
+
                             if isinstance(val, ast.List):
                                 # Flask
                                 extras_require.extend([elt.value for elt in val.elts])

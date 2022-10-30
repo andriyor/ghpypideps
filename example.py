@@ -105,7 +105,13 @@ if __name__ == "__main__":
     # package_name = 'aiohttp'
     # package_name = 'isort'
     # package_name = 'msrest'
-    package_name = 'oauth2client'
+    # package_name = 'oauth2client'
+    # package_name = 'greenlet'
+    # package_name = 'async-timeout'
+    # package_name = 'webencodings'
+    # package_name = 'tensorflow'
+    # package_name = 'aliyunsdkcore'
+    package_name = 'zope-interface'
 
     deps = fetch_deps(package_name)
 
