@@ -1,0 +1,31 @@
+{
+  "setup.cfg": [],
+  "setup.py": [
+    {
+      "extras_require": [
+        "websockets",
+        "python-socks",
+        "wsaccel",
+        "Sphinx >= 3.4",
+        "sphinx_rtd_theme >= 0.5"
+      ]
+    },
+    {
+      "install_requires": []
+    },
+    {
+      "tests_require": []
+    }
+  ],
+  "pypi": [
+    "Sphinx (>=3.4) ; extra == 'docs'",
+    "sphinx-rtd-theme (>=0.5) ; extra == 'docs'",
+    "python-socks ; extra == 'optional'",
+    "wsaccel ; extra == 'optional'",
+    "websockets ; extra == 'test'"
+  ],
+  "docs/source/requirements.txt": [
+    "Sphinx>=3.4",
+    "sphinx_rtd_theme>=0.5"
+  ]
+}

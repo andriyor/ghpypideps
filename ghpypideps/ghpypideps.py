@@ -114,7 +114,8 @@ def handle_requirements(uritemplate, path):
 
     req = []
     for r in parse_requirements(req_file_name, session=PipSession()):
-        if r.requirement != '.':
+        # ipython,google-auth
+        if r.requirement != '.' and '.[' not in r.requirement and '..' not in r.requirement:
             req.append(r.requirement.strip())
 
     os.remove(req_file_name)

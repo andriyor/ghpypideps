@@ -113,8 +113,7 @@
     "aiohttp; python_version > '3.0'"
   ],
   "system_tests/system_tests_sync/app_engine_test_app/requirements.txt": [
-    "urllib3",
-    "../../.."
+    "urllib3"
   ],
   "docs/requirements-docs.txt": [
     "cryptography",

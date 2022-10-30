@@ -46,7 +46,7 @@ if __name__ == "__main__":
     # package_name = 'cryptography'
     # package_name = 'google-api-core'
     # package_name = 'pandas'
-    # package_name = 'google-auth'
+    package_name = 'google-auth'
     # package_name = 'enum34'
     # package_name = 'googleapis-common-protos'
     # package_name = 'asn1crypto'
@@ -57,7 +57,12 @@ if __name__ == "__main__":
     # package_name = 'coverage'
     # package_name = 'wrapt'
     # package_name = 'itsdangerous'
-    package_name = 'wcwidth'
+    # package_name = 'wcwidth'
+    # package_name = 'jsonschema'
+    # package_name = 'virtualenv'
+    # package_name = 'google-cloud-storage'
+    # package_name = 'websocket-client'
+    # package_name = 'ipython'
 
     deps = fetch_deps(package_name)
 
