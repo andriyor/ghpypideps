@@ -1,0 +1,7 @@
+{
+  "setup.cfg": [],
+  "setup.py": [],
+  "pypi": [
+    "smmap (>=3.0.1)"
+  ]
+}

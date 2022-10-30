@@ -1,0 +1,13 @@
+{
+  "setup.cfg": [],
+  "setup.py": [
+    {
+      "extras_require": [
+        "pathlib2"
+      ]
+    }
+  ],
+  "pypi": [
+    "pathlib2; python_version in \"2.6 2.7 3.2 3.3\""
+  ]
+}

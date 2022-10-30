@@ -1,0 +1,12 @@
+{
+  "setup.py": [],
+  "pypi": [
+    "six",
+    "scandir ; python_version<\"3.5\"",
+    "typing ; python_version<\"3.5\""
+  ],
+  "tests/requirements.txt": [
+    "pytest",
+    "contextlib2; python_version < '3.7'"
+  ]
+}

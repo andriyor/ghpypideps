@@ -1,0 +1,32 @@
+{
+  "setup.cfg": [],
+  "setup.py": [
+    {
+      "install_requires": [
+        "parso>=0.8.0,<0.9.0"
+      ]
+    },
+    {
+      "extras_require": [
+        "pytest<7.0.0",
+        "docopt",
+        "colorama",
+        "Django<3.1",
+        "attrs",
+        "flake8==3.8.3",
+        "mypy==0.782",
+        "sphinx<2",
+        "docutils<0.18"
+      ]
+    }
+  ],
+  "pypi": [
+    "parso (<0.9.0,>=0.8.0)",
+    "flake8 (==3.8.3) ; extra == 'qa'",
+    "mypy (==0.782) ; extra == 'qa'",
+    "Django (<3.1) ; extra == 'testing'",
+    "colorama ; extra == 'testing'",
+    "docopt ; extra == 'testing'",
+    "pytest (<7.0.0) ; extra == 'testing'"
+  ]
+}

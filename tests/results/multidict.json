@@ -1,0 +1,32 @@
+{
+  "requirements/ci.txt": [],
+  "requirements/dev.txt": [
+    "pyperformance==1.0.5"
+  ],
+  "requirements/doc-spelling.txt": [
+    "sphinxcontrib-spelling==7.6.2; platform_system!=\"Windows\""
+  ],
+  "requirements/doc.txt": [
+    "sphinx==5.3.0",
+    "pyenchant==3.2.2",
+    "sphinxcontrib-spelling==7.6.2"
+  ],
+  "requirements/lint.txt": [
+    "mypy==0.982; implementation_name==\"cpython\"",
+    "flake8==5.0.4",
+    "flake8-pyi==22.10.0",
+    "black==22.10.0",
+    "isort==5.10.1"
+  ],
+  "requirements/pytest.txt": [
+    "pytest==7.2.0",
+    "pytest-cov==4.0.0"
+  ],
+  "requirements/towncrier.txt": [
+    "towncrier==22.8.0"
+  ],
+  "requirements/wheel.txt": [],
+  "setup.cfg": [],
+  "setup.py": [],
+  "pypi": []
+}

@@ -1,0 +1,33 @@
+{
+  "requirements/docs.txt": [
+    "mkdocs_pymdownx_material_extras>=2.0",
+    "mkdocs-minify-plugin",
+    "pyspelling"
+  ],
+  "requirements/lint.txt": [
+    "flake8",
+    "pydocstyle<4.0.0",
+    "flake8_docstrings",
+    "pep8-naming",
+    "flake8-mutable",
+    "flake8-builtins"
+  ],
+  "requirements/project.txt": [
+    "backports.functools_lru_cache ; python_version < '3'"
+  ],
+  "requirements/tests.txt": [
+    "pytest",
+    "pytest-cov",
+    "coverage",
+    "lxml",
+    "html5lib",
+    "beautifulsoup4",
+    "mypy"
+  ],
+  "requirements/tools.txt": [
+    "pygithub"
+  ],
+  "pypi": [
+    "backports-functools-lru-cache; python_version < '3'"
+  ]
+}

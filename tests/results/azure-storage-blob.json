@@ -1,0 +1,256 @@
+{
+  "setup.cfg": [],
+  "shared_requirements.txt": [
+    "azure-ai-nspkg",
+    "azure-ai-translation-nspkg",
+    "azure-ai-language-nspkg",
+    "azure-iot-nspkg",
+    "azure-monitor-nspkg",
+    "azure-appconfiguration<2.0.0,>=1.2.0",
+    "azure-applicationinsights~=0.1.0",
+    "azure-batch~=4.1",
+    "azure-cognitiveservices-nspkg",
+    "azure-cognitiveservices-knowledge-nspkg",
+    "azure-cognitiveservices-language-nspkg",
+    "azure-cognitiveservices-search-nspkg",
+    "azure-cognitiveservices-vision-nspkg",
+    "azure-common~=1.1",
+    "azure-communication-nspkg",
+    "azure-core<2.0.0,>=1.2.2",
+    "azure-cosmosdb-table~=1.0",
+    "azure-datalake-store~=0.0.18",
+    "azure-data-nspkg<2.0.0,>=1.0.0",
+    "azure-digitaltwins-nspkg>=1.0.0",
+    "azure-eventhub<6.0.0,>=5.0.0",
+    "azure-eventgrid~=1.1",
+    "azure-graphrbac~=0.40.0",
+    "azure-keyvault==4.0.0b5",
+    "azure-keyvault-secrets~=4.0",
+    "azure-keyvault-keys~=4.0",
+    "azure-loganalytics~=0.1.0",
+    "azure-mgmt~=4.0",
+    "azure-mgmt-advisor~=1.0",
+    "azure-mgmt-applicationinsights~=0.1.1",
+    "azure-mgmt-authorization~=0.50.0",
+    "azure-mgmt-batch~=5.0",
+    "azure-mgmt-batchai~=2.0",
+    "azure-mgmt-billing~=0.2.0",
+    "azure-mgmt-cdn~=3.0",
+    "azure-mgmt-cognitiveservices~=3.0",
+    "azure-mgmt-commerce~=1.0",
+    "azure-mgmt-compute~=4.0",
+    "azure-mgmt-communication~=0.1.0",
+    "azure-mgmt-consumption~=2.0",
+    "azure-mgmt-containerinstance~=1.0",
+    "azure-mgmt-containerregistry~=2.1",
+    "azure-mgmt-containerservice~=4.2",
+    "azure-mgmt-cosmosdb~=0.4.1",
+    "azure-mgmt-datafactory~=0.6.0",
+    "azure-mgmt-datalake-analytics~=0.6.0",
+    "azure-mgmt-datalake-nspkg",
+    "azure-mgmt-datalake-store~=0.5.0",
+    "azure-mgmt-datamigration~=1.0",
+    "azure-mgmt-devspaces~=0.1.0",
+    "azure-mgmt-devtestlabs~=2.2",
+    "azure-mgmt-dns~=2.0",
+    "azure-mgmt-eventgrid~=1.0",
+    "azure-mgmt-eventhub~=2.1",
+    "azure-mgmt-hanaonazure~=0.1.1",
+    "azure-mgmt-iotcentral~=0.1.0",
+    "azure-mgmt-iothub~=0.5.0",
+    "azure-mgmt-iothubprovisioningservices~=0.2.0",
+    "azure-mgmt-keyvault~=1.0",
+    "azure-mgmt-loganalytics~=0.2.0",
+    "azure-mgmt-logic~=3.0",
+    "azure-mgmt-machinelearningcompute~=0.4.1",
+    "azure-mgmt-managementgroups~=0.1.0",
+    "azure-mgmt-managementpartner~=0.1.0",
+    "azure-mgmt-maps~=0.1.0",
+    "azure-mgmt-marketplaceordering~=0.1.0",
+    "azure-mgmt-media~=1.0.0rc2",
+    "azure-mgmt-monitor~=0.5.2",
+    "azure-mgmt-msi~=0.2.0",
+    "azure-mgmt-network~=2.0",
+    "azure-mgmt-notificationhubs~=2.0",
+    "azure-mgmt-nspkg",
+    "azure-mgmt-policyinsights~=0.1.0",
+    "azure-mgmt-powerbiembedded~=2.0",
+    "azure-mgmt-scheduler~=2.0",
+    "azure-mgmt-search~=2.0",
+    "azure-mgmt-servicebus~=0.5.1",
+    "azure-mgmt-servicefabric~=0.2.0",
+    "azure-mgmt-signalr~=0.1.0",
+    "azure-mgmt-sql~=0.9.1",
+    "azure-mgmt-storage~=2.0",
+    "azure-mgmt-subscription~=0.2.0",
+    "azure-mgmt-trafficmanager~=0.50.0",
+    "azure-mgmt-web~=0.35.0",
+    "azure-messaging-nspkg",
+    "azure-mixedreality-authentication",
+    "azure-nspkg",
+    "azure-keyvault-nspkg",
+    "azure-media-nspkg",
+    "azure-agrifood-nspkg",
+    "azure-purview-nspkg",
+    "azure-schemaregistry>=1.0.0,<2.0.0",
+    "azure-search-nspkg",
+    "azure-security-nspkg",
+    "azure-synapse-nspkg",
+    "azure-servicebus~=0.21.1",
+    "azure-servicefabric~=6.3.0.0",
+    "azure-servicemanagement-legacy~=0.20.6",
+    "azure-storage-nspkg<4.0.0,>=3.0.0",
+    "azure-storage-blob~=1.3",
+    "azure-storage-file~=1.3",
+    "azure-storage-queue~=1.3",
+    "cryptography>=2.1.4",
+    "fixedint==0.1.6",
+    "futures",
+    "mock",
+    "typing",
+    "typing-extensions",
+    "msal<2.0.0,>=1.12.0",
+    "msal-extensions<2.0.0,>=0.3.0",
+    "msrest>=0.6.21",
+    "msrestazure<2.0.0,>=0.4.32",
+    "azure-mgmt-core<2.0.0,>=1.3.0",
+    "requests>=2.18.4",
+    "uamqp~=1.6.0",
+    "enum34>=1.0.4",
+    "certifi>=2017.4.17",
+    "aiohttp>=3.0",
+    "aiodns>=2.0",
+    "python-dateutil>=2.8.0",
+    "six>=1.11.0",
+    "isodate>=0.6.0",
+    "avro>=1.11.0",
+    "pyjwt>=1.7.1",
+    "chardet<5,>=3.0.2",
+    "yarl<2.0,>=1.0",
+    "opencensus>=0.6.0",
+    "opencensus-ext-threading",
+    "opencensus-ext-azure>=0.3.1",
+    "opentelemetry-api<2.0.0,>=1.5.0,!=1.10a0",
+    "opentelemetry-sdk<2.0.0,>=1.5.0,!=1.10a0"
+  ],
+  "pypi": [
+    "azure-core (<2.0.0,>=1.24.2)",
+    "msrest (>=0.7.1)",
+    "cryptography (>=2.1.4)"
+  ],
+  "scripts/quickstart_tooling_dpg/dev_requirements.txt": [
+    "jinja2==3.1.2"
+  ],
+  "scripts/check_change_log/requirements.txt": [],
+  "sdk/videoanalyzer/azure-media-videoanalyzer-edge/dev_requirements.txt": [
+    "aiohttp>=3.0",
+    "aiodns>=2.0",
+    "tox>=3.20.0",
+    "tox-monorepo>=0.1.2"
+  ],
+  "sdk/purview/azure-purview-administration/dev_requirements.txt": [
+    "aiohttp>=3.0"
+  ],
+  "sdk/purview/azure-purview-scanning/dev_requirements.txt": [
+    "aiohttp>=3.0"
+  ],
+  "sdk/agrifood/azure-agrifood-farming/dev_requirements.txt": [
+    "aiohttp>=3.0"
+  ],
+  "sdk/attestation/azure-security-attestation/dev_requirements.txt": [
+    "aiohttp>=3.0",
+    "azure-identity"
+  ],
+  "scripts/pylint_custom_plugin/dev_requirements.txt": [
+    "pylint==2.9.3"
+  ],
+  "eng/release_requirements.txt": [
+    "twine==3.1.1; python_version >= '3.6'",
+    "pkginfo==1.5.0.1"
+  ],
+  "sdk/scheduler/azure-mgmt-scheduler/dev_requirements.txt": [],
+  "sdk/cosmos/azure-cosmos/dev_requirements.txt": [
+    "azure-core",
+    "azure-identity"
+  ],
+  "sdk/purview/azure-purview-catalog/dev_requirements.txt": [
+    "aiohttp>=3.0"
+  ],
+  "sdk/synapse/azure-synapse-artifacts/dev_requirements.txt": [],
+  "sdk/monitor/azure-monitor-query/dev_requirements.txt": [
+    "azure-mgmt-loganalytics",
+    "aiohttp>=3.0"
+  ],
+  "sdk/translation/azure-ai-translation-document/dev_requirements.txt": [
+    "azure-storage-blob==12.9.0",
+    "aiohttp>=3.0",
+    "pytz"
+  ],
+  "sdk/webpubsub/azure-messaging-webpubsubservice/dev_requirements.txt": [
+    "aiohttp>=3.0",
+    "typing_extensions>=3.7.2"
+  ],
+  "sdk/servicebus/azure-servicebus/stress/scripts/dev_requirements.txt": [
+    "aiohttp>=3.0; python_version >= '3.5'",
+    "opencensus-ext-azure",
+    "psutil",
+    "pytest",
+    "azure-servicebus",
+    "python-dotenv"
+  ],
+  "common/smoketest/requirements-release.txt": [
+    "azure-core>=0.0.0b1",
+    "azure-identity>=0.0.0b1",
+    "azure-cosmos>=4.0.0b5",
+    "azure-eventhub>=0.0.0b1,!=5.8.0a1",
+    "azure-keyvault-certificates>=0.0.0b1",
+    "azure-keyvault-keys>=0.0.0b1",
+    "azure-keyvault-secrets>=0.0.0b1",
+    "azure-storage-blob>=0.0.0b1",
+    "azure-template>=0.0.0b1"
+  ],
+  "sdk/schemaregistry/azure-schemaregistry-avroencoder/dev_requirements.txt": [
+    "aiohttp>=3.0"
+  ],
+  "sdk/communication/azure-communication-sms/dev_requirements.txt": [
+    "aiohttp>=3.0",
+    "aiounittest>=1.4"
+  ],
+  "sdk/communication/azure-communication-chat/dev_requirements.txt": [
+    "aiohttp>=3.0",
+    "python-dateutil>=2.8.1"
+  ],
+  "sdk/communication/azure-communication-phonenumbers/dev_requirements.txt": [
+    "aiohttp>=3.0"
+  ],
+  "sdk/communication/azure-communication-networktraversal/dev_requirements.txt": [
+    "aiohttp>=3.0"
+  ],
+  "sdk/deviceupdate/azure-iot-deviceupdate/dev_requirements.txt": [
+    "aiohttp>=3.0"
+  ],
+  "sdk/eventhub/azure-mgmt-eventhub/dev_requirements.txt": [
+    "azure-data-tables==12.2.0"
+  ],
+  "sdk/containerregistry/azure-containerregistry/dev_requirements.txt": [
+    "aiohttp>=3.0",
+    "azure-identity",
+    "msrestazure>=0.4.11"
+  ],
+  "sdk/storage/azure-mgmt-storage/dev_requirements.txt": [
+    "aiohttp>=3.0; python_version >= '3.5'",
+    "azure-mgmt-network==19.0.0"
+  ],
+  "sdk/identity/azure-identity/tests/managed-identity-live/requirements.txt": [
+    "pytest",
+    "pytest-asyncio",
+    "aiohttp>=3.0"
+  ],
+  "sdk/resources/azure-mgmt-resource/dev_requirements.txt": [
+    "aiohttp>=3.0; python_version >= '3.5'",
+    "azure-mgmt-managementgroups==1.0.0",
+    "azure-mgmt-msi==1.0.0",
+    "azure-identity"
+  ],
+  "sdk/commerce/azure-mgmt-commerce/dev_requirements.txt": []
+}
