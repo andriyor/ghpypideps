@@ -36,7 +36,11 @@ if __name__ == "__main__":
     # package_name = 'futures'
     # package_name = 'setuptools'
     # package_name = 'google-cloud-core'
-    package_name = 'colorama'
+    # package_name = 'colorama'
+    # package_name = 'simplejson'
+    # package_name = 'boto3'
+    # package_name = 'wheel'
+    package_name = 'protobuf'
 
     deps = fetch_deps(package_name)
 

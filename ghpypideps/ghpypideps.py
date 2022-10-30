@@ -170,7 +170,7 @@ def fetch_deps(package_name):
     all_req = {}
 
     url = find_source_repo(package_name)
-    if 'github' not in url:
+    if url is None or 'github' not in url:
         return
 
     if url[-1] == '/':
