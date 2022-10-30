@@ -1,0 +1,51 @@
+{
+  "setup.cfg": [
+    {
+      "testing": [
+        "argcomplete",
+        "hypothesis>=3.56",
+        "mock",
+        "nose",
+        "pygments>=2.7.2",
+        "requests",
+        "xmlschema"
+      ]
+    },
+    {
+      "setup_requires": [
+        "setuptools",
+        "setuptools-scm>=6.0"
+      ]
+    },
+    {
+      "install_requires": [
+        "attrs>=19.2.0",
+        "iniconfig",
+        "packaging",
+        "pluggy>=0.12,<2.0",
+        "colorama;sys_platform==\"win32\"",
+        "exceptiongroup>=1.0.0rc8;python_version<\"3.11\"",
+        "importlib-metadata>=0.12;python_version<\"3.8\"",
+        "tomli>=1.0.0;python_version<\"3.11\""
+      ]
+    }
+  ],
+  "setup.py": [],
+  "pypi": [
+    "attrs (>=19.2.0)",
+    "iniconfig",
+    "packaging",
+    "pluggy (<2.0,>=0.12)",
+    "exceptiongroup (>=1.0.0rc8) ; python_version < \"3.11\"",
+    "tomli (>=1.0.0) ; python_version < \"3.11\"",
+    "importlib-metadata (>=0.12) ; python_version < \"3.8\"",
+    "colorama ; sys_platform == \"win32\"",
+    "argcomplete ; extra == 'testing'",
+    "hypothesis (>=3.56) ; extra == 'testing'",
+    "mock ; extra == 'testing'",
+    "nose ; extra == 'testing'",
+    "pygments (>=2.7.2) ; extra == 'testing'",
+    "requests ; extra == 'testing'",
+    "xmlschema ; extra == 'testing'"
+  ]
+}

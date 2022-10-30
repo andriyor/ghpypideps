@@ -1,0 +1,11 @@
+{
+  "pypi": [
+    "railroad-diagrams ; extra == \"diagrams\"",
+    "jinja2 ; extra == \"diagrams\""
+  ],
+  "tests/requirements.txt": [
+    "coverage==4.4.2",
+    "tox==3.5.2",
+    "pre-commit"
+  ]
+}
