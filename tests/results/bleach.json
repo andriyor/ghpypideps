@@ -1,0 +1,44 @@
+{
+  "setup.cfg": [],
+  "setup.py": [
+    {
+      "install_requires": [
+        "six>=1.9.0",
+        "webencodings"
+      ]
+    },
+    {
+      "extras_require": [
+        "tinycss2>=1.1.0,<1.2",
+        "black==22.3.0; implementation_name == 'cpython'",
+        "build==0.8.0",
+        "flake8==4.0.1",
+        "hashin==0.17.0",
+        "mypy==0.961; implementation_name=='cpython'",
+        "pip-tools==6.6.2",
+        "pytest==7.1.2",
+        "Sphinx==4.3.2",
+        "tox==3.25.0",
+        "twine==4.0.1",
+        "wheel==0.37.1"
+      ]
+    }
+  ],
+  "pypi": [
+    "six (>=1.9.0)",
+    "webencodings",
+    "tinycss2 (<1.2,>=1.1.0) ; extra == 'css'",
+    "build (==0.8.0) ; extra == 'dev'",
+    "flake8 (==4.0.1) ; extra == 'dev'",
+    "hashin (==0.17.0) ; extra == 'dev'",
+    "pip-tools (==6.6.2) ; extra == 'dev'",
+    "pytest (==7.1.2) ; extra == 'dev'",
+    "Sphinx (==4.3.2) ; extra == 'dev'",
+    "tox (==3.25.0) ; extra == 'dev'",
+    "twine (==4.0.1) ; extra == 'dev'",
+    "wheel (==0.37.1) ; extra == 'dev'",
+    "black (==22.3.0) ; (implementation_name == \"cpython\") and extra == 'dev'",
+    "mypy (==0.961) ; (implementation_name == \"cpython\") and extra == 'dev'"
+  ],
+  "docs/requirements.txt": []
+}

@@ -1,0 +1,16 @@
+{
+  "requirements.txt": [
+    "requests==2.20.0",
+    "PyJWT==2.4.0",
+    "python-dateutil==2.1.0",
+    "httpretty==0.8.14",
+    "pylint==1.5.4"
+  ],
+  "setup.cfg": [],
+  "pypi": [
+    "PyJWT (<3,>=1.0.0)",
+    "requests (<3,>=2.0.0)",
+    "python-dateutil (<3,>=2.1.0)",
+    "cryptography (>=1.1.0)"
+  ]
+}

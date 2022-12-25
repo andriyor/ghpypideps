@@ -1,0 +1,38 @@
+{
+  "setup.cfg": [],
+  "setup.py": [
+    {
+      "install_requires": [
+        "numpy>=1.9.1"
+      ]
+    },
+    {
+      "extras_require": [
+        "pandas",
+        "Pillow",
+        "tensorflow",
+        "keras",
+        "pytest",
+        "pytest-xdist",
+        "pytest-cov",
+        "flake8",
+        "scipy>=0.14",
+        "Pillow>=5.2.0"
+      ]
+    }
+  ],
+  "pypi": [
+    "numpy (>=1.9.1)",
+    "six (>=1.9.0)",
+    "scipy (>=0.14) ; extra == 'image'",
+    "Pillow (>=5.2.0) ; extra == 'image'",
+    "flake8 ; extra == 'pep8'",
+    "pandas ; extra == 'tests'",
+    "Pillow ; extra == 'tests'",
+    "tensorflow ; extra == 'tests'",
+    "keras ; extra == 'tests'",
+    "pytest ; extra == 'tests'",
+    "pytest-xdist ; extra == 'tests'",
+    "pytest-cov ; extra == 'tests'"
+  ]
+}

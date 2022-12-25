@@ -1,0 +1,26 @@
+{
+  "dev-requirements.txt": [
+    "restview",
+    "pylint>=1.8.0 ; python_version < \"3.4\"",
+    "pylint >= 2.5.0 ; python_version >= \"3.4\"  and platform_python_implementation == \"CPython\"",
+    "astroid >= 2.4.0 ; python_version >= \"3.4\" and platform_python_implementation == \"CPython\"",
+    "faulthandler ; python_version == \"2.7\"  and platform_python_implementation == \"CPython\"",
+    "towncrier",
+    "zest.releaser[recommended]",
+    "pyperf >= 1.6.1",
+    "greenlet >= 1.0"
+  ],
+  "setup.cfg": [],
+  "setup.py": [
+    {
+      "extras_require": [
+        "dnspython >= 1.16.0, < 2.0; python_version < \"3.10\"",
+        "idna; python_version < \"3.10\"",
+        "repoze.sphinx.autointerface",
+        "sphinxcontrib-programoutput",
+        "zope.schema"
+      ]
+    }
+  ],
+  "pypi": []
+}

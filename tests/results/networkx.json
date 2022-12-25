@@ -1,0 +1,72 @@
+{
+  "requirements/default.txt": [
+    "numpy>=1.20",
+    "scipy>=1.8",
+    "matplotlib>=3.4",
+    "pandas>=1.3"
+  ],
+  "requirements/developer.txt": [
+    "pre-commit>=2.20",
+    "mypy>=0.982"
+  ],
+  "requirements/doc.txt": [
+    "sphinx>=5.2",
+    "pydata-sphinx-theme>=0.11",
+    "sphinx-gallery>=0.11",
+    "numpydoc>=1.5",
+    "pillow>=9.2",
+    "nb2plots>=0.6",
+    "texext>=0.6.7"
+  ],
+  "requirements/example.txt": [
+    "osmnx>=1.1",
+    "momepy>=0.5",
+    "contextily>=1.2",
+    "seaborn>=0.11",
+    "cairocffi>=1.3",
+    "igraph>=0.9.8"
+  ],
+  "requirements/extra.txt": [
+    "lxml>=4.6",
+    "pygraphviz>=1.10",
+    "pydot>=1.4.2",
+    "sympy>=1.10"
+  ],
+  "requirements/release.txt": [
+    "build>=0.8",
+    "twine>=4.0",
+    "wheel>=0.37"
+  ],
+  "requirements/test.txt": [
+    "pytest>=7.1",
+    "pytest-cov>=3.0",
+    "codecov>=2.1"
+  ],
+  "setup.py": [
+    {
+      "install_requires": []
+    }
+  ],
+  "pypi": [
+    "numpy (>=1.19) ; extra == 'default'",
+    "scipy (>=1.8) ; extra == 'default'",
+    "matplotlib (>=3.4) ; extra == 'default'",
+    "pandas (>=1.3) ; extra == 'default'",
+    "pre-commit (>=2.20) ; extra == 'developer'",
+    "mypy (>=0.981) ; extra == 'developer'",
+    "sphinx (>=5) ; extra == 'doc'",
+    "pydata-sphinx-theme (>=0.9) ; extra == 'doc'",
+    "sphinx-gallery (>=0.10) ; extra == 'doc'",
+    "numpydoc (>=1.4) ; extra == 'doc'",
+    "pillow (>=9.1) ; extra == 'doc'",
+    "nb2plots (>=0.6) ; extra == 'doc'",
+    "texext (>=0.6.6) ; extra == 'doc'",
+    "lxml (>=4.6) ; extra == 'extra'",
+    "pygraphviz (>=1.9) ; extra == 'extra'",
+    "pydot (>=1.4.2) ; extra == 'extra'",
+    "sympy (>=1.10) ; extra == 'extra'",
+    "pytest (>=7.1) ; extra == 'test'",
+    "pytest-cov (>=3.0) ; extra == 'test'",
+    "codecov (>=2.1) ; extra == 'test'"
+  ]
+}

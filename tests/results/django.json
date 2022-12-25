@@ -1,0 +1,37 @@
+{
+  "setup.cfg": [
+    {
+      "argon2": [
+        "argon2-cffi >= 19.1.0"
+      ]
+    },
+    {
+      "bcrypt": [
+        "bcrypt"
+      ]
+    },
+    {
+      "install_requires": [
+        "asgiref >= 3.5.2",
+        "backports.zoneinfo; python_version<\"3.9\"",
+        "sqlparse >= 0.2.2",
+        "tzdata; sys_platform == 'win32'"
+      ]
+    }
+  ],
+  "setup.py": [],
+  "pypi": [
+    "asgiref (<4,>=3.5.2)",
+    "sqlparse (>=0.2.2)",
+    "backports.zoneinfo ; python_version < \"3.9\"",
+    "tzdata ; sys_platform == \"win32\"",
+    "argon2-cffi (>=19.1.0) ; extra == 'argon2'",
+    "bcrypt ; extra == 'bcrypt'"
+  ],
+  "docs/requirements.txt": [
+    "pyenchant",
+    "Sphinx>=4.5.0",
+    "sphinxcontrib-spelling"
+  ],
+  "tests/admin_scripts/custom_templates/project_template/additional_dir/requirements.txt": []
+}

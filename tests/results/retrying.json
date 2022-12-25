@@ -1,0 +1,9 @@
+{
+  "requirements.txt": [
+    "six>=1.7.0"
+  ],
+  "setup.py": [],
+  "pypi": [
+    "six (>=1.7.0)"
+  ]
+}

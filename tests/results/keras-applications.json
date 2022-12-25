@@ -1,0 +1,26 @@
+{
+  "setup.py": [
+    {
+      "install_requires": [
+        "numpy>=1.9.1",
+        "h5py"
+      ]
+    },
+    {
+      "extras_require": [
+        "pytest",
+        "pytest-pep8",
+        "pytest-xdist",
+        "pytest-cov"
+      ]
+    }
+  ],
+  "pypi": [
+    "numpy (>=1.9.1)",
+    "h5py",
+    "pytest ; extra == 'tests'",
+    "pytest-pep8 ; extra == 'tests'",
+    "pytest-xdist ; extra == 'tests'",
+    "pytest-cov ; extra == 'tests'"
+  ]
+}
