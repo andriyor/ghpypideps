@@ -30,7 +30,7 @@
       ]
     }
   ],
-  "setup.py": [],
+  "setup.py": {},
   "pypi": [
     "attrs (>=19.2.0)",
     "iniconfig",

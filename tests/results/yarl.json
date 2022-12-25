@@ -1,0 +1,42 @@
+{
+  "requirements/ci.txt": [],
+  "requirements/cython.txt": [
+    "cython==0.29.32"
+  ],
+  "requirements/dev.txt": [
+    "towncrier==22.8.0"
+  ],
+  "requirements/doc-spelling.txt": [
+    "sphinxcontrib-spelling==7.7.0; platform_system!=\"Windows\""
+  ],
+  "requirements/doc.txt": [
+    "sphinx==5.3.0"
+  ],
+  "requirements/lint.txt": [
+    "mypy==0.971; implementation_name==\"cpython\"",
+    "pre-commit==2.20.0"
+  ],
+  "requirements/test.txt": [
+    "idna==3.4",
+    "multidict==6.0.3",
+    "pytest==7.2.0",
+    "pytest-cov>=2.3.1",
+    "typing_extensions==4.4.0"
+  ],
+  "requirements/towncrier.txt": [
+    "towncrier==22.8.0"
+  ],
+  "setup.cfg": [],
+  "setup.py": {
+    "install_requires": [
+      "multidict>=4.0",
+      "idna>=2.0",
+      "typing-extensions>=3.7.4;python_version<\"3.8\""
+    ]
+  },
+  "pypi": [
+    "multidict (>=4.0)",
+    "idna (>=2.0)",
+    "typing-extensions (>=3.7.4) ; python_version < \"3.8\""
+  ]
+}

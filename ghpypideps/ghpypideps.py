@@ -36,7 +36,7 @@ github = github3.login(token=token)
 class Analyzer(ast.NodeVisitor):
     def __init__(self):
         self.assigns = {}
-        self.req = []
+        self.req = {}
 
     def visit_Assign(self, node):
         if isinstance(node.targets[0], ast.Name):
@@ -46,6 +46,10 @@ class Analyzer(ast.NodeVisitor):
                     if isinstance(elr, ast.Constant):
                         constants.append(elr.value)
                 self.assigns[node.targets[0].id] = constants
+
+                # yarl
+                if node.targets[0].id in ['setup_requires', 'tests_require', 'install_requires']:
+                    self.req[node.targets[0].id] = constants
 
             if isinstance(node.value, ast.Dict):
                 constants = []
@@ -72,20 +76,20 @@ class Analyzer(ast.NodeVisitor):
                 for setup_arg in ['setup_requires', 'tests_require', 'install_requires']:
                     if key.arg == setup_arg:
                         if isinstance(key.value, ast.Name) and key.value.id in assigns_keys:
-                            self.req.append({setup_arg: self.assigns[key.value.id]})
+                            self.req[setup_arg] = self.assigns[key.value.id]
 
                         if isinstance(key.value, ast.List):
-                            self.req.append({setup_arg: [elt.value for elt in key.value.elts]})
+                            self.req[setup_arg] = [elt.value for elt in key.value.elts]
 
                         # wcwidth
                         if isinstance(key.value, ast.Constant):
-                            self.req.append({setup_arg: key.value.value.split(';')})
+                            self.req[setup_arg] = key.value.value.split(';')
 
                 # TODO: use dict for keys?
                 if key.arg == 'extras_require':
                     # python-cloud-core
                     if isinstance(key.value, ast.Name) and key.value.id in assigns_keys:
-                        self.req.append({'extras_require': self.assigns[key.value.id]})
+                        self.req['extras_require'] = self.assigns[key.value.id]
 
                     if isinstance(key.value, ast.Dict):
                         extras_require = []
@@ -101,7 +105,7 @@ class Analyzer(ast.NodeVisitor):
                                 # Flask
                                 extras_require.extend([elt.value for elt in val.elts])
 
-                        self.req.append({'extras_require': extras_require})
+                        self.req['extras_require'] = extras_require
 
 
 def handle_requirements(uritemplate, path):
