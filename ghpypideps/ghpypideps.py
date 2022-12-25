@@ -196,9 +196,12 @@ def handle_setup_cfg(uritemplate):
 
 def fetch_deps(package_name):
     req_files = []
-    all_req = {}
+    all_req = {
+        'requirements.txt': {}
+    }
 
     url = find_source_repo(package_name)
+    print(url)
     if url is None or 'github' not in url:
         return
 
@@ -218,7 +221,7 @@ def fetch_deps(package_name):
                     if '.txt' in dir_content[0] and 'lock' not in dir_content[0]:
                         req_files.append(content[0])
                         req = handle_requirements(uritemplate, dir_content[1].path)
-                        all_req[dir_content[1].path] = req
+                        all_req['requirements.txt'][dir_content[1].path] = req
 
                 # matplotlib
                 if dir_content[1].type == 'dir':
@@ -226,13 +229,13 @@ def fetch_deps(package_name):
                         if '.txt' in nested_dir_content[0] and 'lock' not in nested_dir_content[0]:
                             req_files.append(nested_dir_content[0])
                             req = handle_requirements(uritemplate, nested_dir_content[1].path)
-                            all_req[nested_dir_content[1].path] = req
+                            all_req['requirements.txt'][nested_dir_content[1].path] = req
 
         if content_obj.type == 'file':
             if 'requirements' in content_obj.name and '.txt' in content_obj.name and 'lock' not in content_obj.name:
                 req_files.append(content_obj.name)
                 req = handle_requirements(uritemplate, content_obj.name)
-                all_req[content_obj.name] = req
+                all_req['requirements.txt'][content_obj.name] = req
 
             if content_obj.name == SETUP_CFG:
                 setup_cfg_req = handle_setup_cfg(uritemplate)
@@ -255,5 +258,5 @@ def fetch_deps(package_name):
     all_req['pypi'] = requires_dist
 
     req = search_requirements(uritemplate, owner, repository, req_files)
-    all_req.update(req)
+    all_req['requirements.txt'].update(req)
     return all_req

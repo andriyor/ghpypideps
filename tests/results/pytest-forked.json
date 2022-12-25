@@ -1,0 +1,15 @@
+{
+  "setup.py": {
+    "install_requires": [
+      "py",
+      "pytest>=3.10"
+    ],
+    "setup_requires": [
+      "setuptools_scm"
+    ]
+  },
+  "pypi": [
+    "py",
+    "pytest (>=3.10)"
+  ]
+}

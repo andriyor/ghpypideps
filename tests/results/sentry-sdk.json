@@ -1,0 +1,71 @@
+{
+  "requirements.txt": {
+    "docs-requirements.txt": [
+      "sphinx==5.3.0",
+      "sphinx-autodoc-typehints[type_comments]>=1.8.0",
+      "typing-extensions"
+    ],
+    "linter-requirements.txt": [
+      "mypy==0.971",
+      "black==22.10.0",
+      "flake8==5.0.4",
+      "types-certifi",
+      "types-setuptools",
+      "pymongo",
+      "flake8-bugbear==22.9.23",
+      "pep8-naming==0.13.2",
+      "pre-commit"
+    ],
+    "test-requirements.txt": [
+      "pip",
+      "mock",
+      "pytest<7",
+      "pytest-cov==2.8.1",
+      "pytest-forked<=1.4.0",
+      "pytest-localserver==0.5.0",
+      "pytest-watch==4.2.0",
+      "tox==3.7.0",
+      "Werkzeug<2.1.0",
+      "jsonschema==3.2.0",
+      "pyrsistent==0.16.0",
+      "executing",
+      "asttokens",
+      "ipdb"
+    ]
+  },
+  "setup.py": {
+    "install_requires": [
+      "urllib3>=1.25.7; python_version<=\"3.4\"",
+      "urllib3>=1.26.9; python_version==\"3.5\"",
+      "urllib3>=1.26.11; python_version >=\"3.6\"",
+      "certifi"
+    ],
+    "extras_require": [
+      "flask>=0.11",
+      "blinker>=1.1",
+      "quart>=0.16.1",
+      "blinker>=1.1",
+      "bottle>=0.12.13",
+      "falcon>=1.4",
+      "django>=1.8",
+      "sanic>=0.8",
+      "celery>=3",
+      "apache-beam>=2.12",
+      "rq>=0.6",
+      "aiohttp>=3.5",
+      "tornado>=5",
+      "sqlalchemy>=1.2",
+      "pyspark>=2.4.4",
+      "pure_eval",
+      "executing",
+      "asttokens",
+      "chalice>=1.16.0",
+      "httpx>=0.16.0",
+      "starlette>=0.19.1",
+      "fastapi>=0.79.0",
+      "pymongo>=3.1",
+      "opentelemetry-distro>=0.350b0"
+    ]
+  },
+  "pypi": []
+}

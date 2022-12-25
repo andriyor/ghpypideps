@@ -46,7 +46,7 @@ if __name__ == "__main__":
     # package_name = 'cryptography'
     # package_name = 'google-api-core'
     # package_name = 'pandas'
-    package_name = 'google-auth'
+    # package_name = 'google-auth'
     # package_name = 'enum34'
     # package_name = 'googleapis-common-protos'
     # package_name = 'asn1crypto'
@@ -132,6 +132,11 @@ if __name__ == "__main__":
     # package_name = 'networkx'
     # package_name = 'retrying'
     # package_name = 'yarl'
+    # package_name = 'toml'
+    # package_name = 'appdirs'
+    # package_name = 'pytest-forked'
+    # package_name = 'toolz'
+    package_name = 'sentry-sdk'
 
     deps = fetch_deps(package_name)
 
