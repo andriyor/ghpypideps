@@ -1,0 +1,123 @@
+{
+  "requirements.txt": {
+    "requirements.txt": [],
+    "requirements/_release_tools.txt": [
+      "pygithub",
+      "tqdm"
+    ],
+    "requirements/build.txt": [
+      "meson-python>=0.11.0",
+      "ninja",
+      "Cython>=0.29.21",
+      "packaging>=20.0",
+      "pythran",
+      "wheel",
+      "numpy>=1.21.1",
+      "git+https://github.com/scientific-python/devpy"
+    ],
+    "requirements/data.txt": [
+      "pooch>=1.3.0"
+    ],
+    "requirements/default.txt": [
+      "numpy>=1.21.1",
+      "scipy>=1.8,<1.9.2; python_version<=\"3.9\"",
+      "scipy>=1.8; python_version>\"3.9\"",
+      "networkx>=2.8",
+      "pillow>=9.0.1",
+      "imageio>=2.4.1",
+      "tifffile>=2019.7.26",
+      "PyWavelets>=1.1.1",
+      "packaging>=20.0",
+      "lazy_loader>=0.1"
+    ],
+    "requirements/developer.txt": [
+      "pre-commit"
+    ],
+    "requirements/docs.txt": [
+      "sphinx>=5.2",
+      "sphinx-gallery>=0.11",
+      "numpydoc>=1.5",
+      "sphinx-copybutton",
+      "scikit-learn",
+      "matplotlib>=3.6",
+      "dask[array]>=2022.9.2",
+      "pandas>=1.5",
+      "seaborn>=0.11",
+      "pooch>=1.6",
+      "tifffile>=2022.8.12",
+      "myst-parser",
+      "ipywidgets",
+      "plotly>=5.10",
+      "kaleido"
+    ],
+    "requirements/extras.txt": [
+      "imread>=0.5.1,!=0.7.2"
+    ],
+    "requirements/optional.txt": [
+      "SimpleITK",
+      "astropy>=3.1.2",
+      "cloudpickle>=0.2.1",
+      "dask[array]>=1.0.0,!=2.17.0",
+      "matplotlib>=3.3",
+      "pooch>=1.3.0",
+      "pyamg"
+    ],
+    "requirements/test.txt": [
+      "asv",
+      "codecov",
+      "matplotlib>=3.3",
+      "pooch>=1.3.0",
+      "pytest>=5.2.0",
+      "pytest-cov>=2.7.0",
+      "pytest-localserver",
+      "pytest-faulthandler"
+    ]
+  },
+  "setup.cfg": [],
+  "setup.py": {},
+  "pypi": [
+    "numpy (>=1.17.0)",
+    "scipy (>=1.4.1)",
+    "networkx (>=2.2)",
+    "pillow (!=7.1.0,!=7.1.1,!=8.3.0,>=6.1.0)",
+    "imageio (>=2.4.1)",
+    "tifffile (>=2019.7.26)",
+    "PyWavelets (>=1.1.1)",
+    "packaging (>=20.0)",
+    "pooch (>=1.3.0) ; extra == 'data'",
+    "sphinx (>=1.8) ; extra == 'docs'",
+    "sphinx-gallery (>=0.10.1) ; extra == 'docs'",
+    "numpydoc (>=1.0) ; extra == 'docs'",
+    "sphinx-copybutton ; extra == 'docs'",
+    "pytest-runner ; extra == 'docs'",
+    "scikit-learn ; extra == 'docs'",
+    "matplotlib (>=3.3) ; extra == 'docs'",
+    "dask[array] (!=2.17.0,>=0.15.0) ; extra == 'docs'",
+    "cloudpickle (>=0.2.1) ; extra == 'docs'",
+    "pandas (>=0.23.0) ; extra == 'docs'",
+    "seaborn (>=0.7.1) ; extra == 'docs'",
+    "pooch (>=1.3.0) ; extra == 'docs'",
+    "tifffile (>=2020.5.30) ; extra == 'docs'",
+    "myst-parser ; extra == 'docs'",
+    "ipywidgets ; extra == 'docs'",
+    "plotly (>=4.14.0) ; extra == 'docs'",
+    "kaleido ; extra == 'docs'",
+    "SimpleITK ; extra == 'optional'",
+    "astropy (>=3.1.2) ; extra == 'optional'",
+    "cloudpickle (>=0.2.1) ; extra == 'optional'",
+    "dask[array] (!=2.17.0,>=1.0.0) ; extra == 'optional'",
+    "matplotlib (>=3.0.3) ; extra == 'optional'",
+    "pooch (>=1.3.0) ; extra == 'optional'",
+    "pyamg ; extra == 'optional'",
+    "qtpy ; extra == 'optional'",
+    "asv ; extra == 'test'",
+    "codecov ; extra == 'test'",
+    "flake8 ; extra == 'test'",
+    "matplotlib (>=3.0.3) ; extra == 'test'",
+    "pooch (>=1.3.0) ; extra == 'test'",
+    "pytest (>=5.2.0) ; extra == 'test'",
+    "pytest-cov (>=2.7.0) ; extra == 'test'",
+    "pytest-localserver ; extra == 'test'",
+    "pytest-faulthandler ; extra == 'test'"
+  ]
+}

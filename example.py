@@ -136,7 +136,9 @@ if __name__ == "__main__":
     # package_name = 'appdirs'
     # package_name = 'pytest-forked'
     # package_name = 'toolz'
-    package_name = 'sentry-sdk'
+    # package_name = 'sentry-sdk'
+    # package_name = 'scikit-image'
+    package_name = 'raven'
 
     deps = fetch_deps(package_name)
 
